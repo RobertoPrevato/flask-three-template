@@ -15,7 +15,6 @@ R("users-panel", ["model", "app-services"], function (Model, Services) {
 
     table: {
       url: "/admin/getusers",
-      useQueryString: false,
       columns: {
         email: I.t("voc.Email"),
         roles: I.t("voc.Roles"),

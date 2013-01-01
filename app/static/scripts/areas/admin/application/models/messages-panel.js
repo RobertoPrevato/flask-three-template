@@ -19,7 +19,8 @@ R("messages-panel", ["model", "app-services"], function (Model, Services) {
 
     table: {
       url: "/admin/getmessages",
-      useQueryString: false,
+      orderBy: "timestamp",
+      sortOrder: "desc",
       columns: {
         kind: I.t("voc.Kind"),
         message: I.t("voc.Message"),

@@ -68,6 +68,7 @@ module.exports = {
       "/scripts/libs/plugins/kingtable/jquery.kingtable.js",
       "/scripts/libs/plugins/kingtable/lodash/jquery.kingtable-lodash.js",
       "/scripts/libs/plugins/kingtable/lodash/templates.js",
+      "/scripts/areas/admin/libs.setup.js",
       "/scripts/libs/knockout/binders/ko-kingtable.js",
       "/scripts/areas/admin/templates.js",
       "/scripts/areas/admin/dashboard/services.js",

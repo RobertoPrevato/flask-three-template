@@ -15,8 +15,10 @@ R("sessions-panel", ["model", "app-services"], function (Model, Services) {
 
     table: {
       url: "/admin/getsessions",
-      useQueryString: false,
+      orderBy: "expiration",
+      sortOrder: "desc",
       columns: {
+        email: I.t("voc.Email"),
         client_ip: I.t("voc.ClientIp"),
         anonymous: I.t("voc.Anonymous"),
         expiration: I.t("voc.Expiration"),

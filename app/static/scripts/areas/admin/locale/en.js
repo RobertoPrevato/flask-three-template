@@ -2,6 +2,8 @@ _.extend(I.regional, {
 
   "en": {
     "voc": {
+      "Yes": "Yes",
+      "No": "No",
       "Login": "Login to administrative side.",
       "LoginButton": "Login",
       "Username": "Username",

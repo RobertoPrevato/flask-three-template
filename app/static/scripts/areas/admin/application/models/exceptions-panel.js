@@ -19,7 +19,6 @@ R("exceptions-panel", ["model", "app-services"], function (Model, Services) {
 
     table: {
       url: "/admin/getexceptions",
-      useQueryString: false,
       orderBy: "timestamp",
       sortOrder: "desc",
       columns: {

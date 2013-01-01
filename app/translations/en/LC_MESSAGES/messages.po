@@ -3,17 +3,17 @@ msgstr "Hello"
 
 # pages
 msgid "home.title"
-msgstr "Flask three tier dashboard."
+msgstr "Flask three tier dashboard"
 msgid "home.description"
 msgstr "Project template for Flask Three-tier web applications."
 
 msgid "adminlogin.title"
-msgstr "Flask three tier admin login."
+msgstr "Flask three tier admin login"
 msgid "adminlogin.description"
 msgstr "Project template for Flask Three-tier web applications."
 
 msgid "adminhome.title"
-msgstr "Flask three tier admin dashboard."
+msgstr "Flask three tier admin dashboard"
 msgid "adminhome.description"
 msgstr "Project template for Flask Three-tier web applications."
 

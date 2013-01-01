@@ -56,7 +56,9 @@ class MembershipMongoTestCase(unittest.TestCase):
         store = MembershipStore()
         provider = MembershipProvider({ "store": store })
 
-        success, error = provider.try_login("foo@foo.it", "1568.Kop$2", False, "no-ip")
+        success, error = provider.try_login("foo@foo.it", "1568.Kop$2", False, "no-ip", {
+            "user_agent": "Flask-Three Template Test"
+        })
         assert success == False and error == "AccountNotFound"
 
         # create account
@@ -80,7 +82,9 @@ class MembershipMongoTestCase(unittest.TestCase):
         assert success == False and result == "AccountAlreadyExisting"
 
         # try to create a session for this account
-        login_success, data = provider.try_login(userkey, password, False, "no-ip")
+        login_success, data = provider.try_login(userkey, password, False, "no-ip", {
+            "user_agent": "Flask-Three Template Test"
+        })
 
         assert login_success == True
         principal = data["principal"]

@@ -7,11 +7,16 @@
 """
 import re
 from core.collections.catalogs import CatalogPage
+from core.collections.listutils import ListUtils
 
 class MongoStore():
     """
     Base class for MongoDB data providers.
     """
+
+    def get_search_condition(self, rx, search_properties):
+        return { "$or": [{ a: { "$regex": rx, "$options": "-i" } } for a in search_properties] }
+
 
     def get_catalog_page(self, collection, options):
         """
@@ -23,6 +28,8 @@ class MongoStore():
         page_number = options["page"]
         page_size = options["size"]
         search = options["search"]
+        order_by = options["orderBy"]
+        sort_order = options["sortOrder"]
         skip = ((page_number-1)*page_size) if page_number > 0 else 0
 
         def sampling(selection, offset=0, limit=None):
@@ -30,10 +37,15 @@ class MongoStore():
 
         if search is not None and search != "":
             rx = re.escape(search)
-            results = collection.find({ "description": { "$regex": rx, "$options": "-i" }})
+            condition = self.get_search_condition(rx, options["search_properties"])
+            results = collection.find(condition)
             results = list(results)
             #obtain the total count of rows:
             total_items = len(results)
+
+            # NB: if an order by is defined; we need to order before paginating results!
+            if order_by is not None and order_by != "":
+                results = ListUtils.sort_by(results, order_by, sort_order)
 
             #return a paginated result to the client:
             results = sampling(results, skip, page_size)
@@ -42,7 +54,10 @@ class MongoStore():
             return CatalogPage(list(results), page_number, total_items)
 
         total_items = collection.count()
-        results = collection.find().skip(skip).limit(page_size)
+        condition = { "$query": {}, "$orderby": {
+            order_by: 1 if sort_order == "asc" else -1
+        } } if order_by is not None and order_by != "" else None
+        results = collection.find(condition).skip(skip).limit(page_size)
 
         results = [self.normalize_id(o) for o in results]
         return CatalogPage(list(results), page_number, total_items)

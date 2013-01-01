@@ -26,4 +26,4 @@ def register_dblogger(app):
 
     # attach to the application a dblogger;
     # but without overriding the Flask logger property.
-    setattr(app, "dblogger", log_manager)
+    setattr(app, "reports", log_manager)

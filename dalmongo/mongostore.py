@@ -28,8 +28,8 @@ class MongoStore():
         page_number = options["page"]
         page_size = options["size"]
         search = options["search"]
-        order_by = options["orderBy"]
-        sort_order = options["sortOrder"]
+        order_by = options["orderBy"] if "orderBy" in options else None
+        sort_order = options["sortOrder"] if "sortOrder" in options else None
         skip = ((page_number-1)*page_size) if page_number > 0 else 0
 
         def sampling(selection, offset=0, limit=None):

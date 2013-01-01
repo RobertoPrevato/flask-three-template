@@ -237,7 +237,7 @@ class MembershipStore(MongoStore):
             "created": time
         }
         collection = db[self.options.login_attempts_collection]
-        collection.insert_one()
+        collection.insert_one(data)
 
 
     def update_account(self, userkey, data):

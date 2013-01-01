@@ -121,7 +121,10 @@ class MembershipProvider:
         options["search_properties"] = ["email", "client_data.user_agent", "client_ip"]
         data = self.options.store.get_sessions(options)
         for o in data.subset:
-            o["user_agent"] = o["client_data"]["user_agent"]
+            if o["client_data"]:
+                o["user_agent"] = o["client_data"]["user_agent"]
+            else:
+                o["user_agent"] = ""
             del o["client_data"]
         return data
 

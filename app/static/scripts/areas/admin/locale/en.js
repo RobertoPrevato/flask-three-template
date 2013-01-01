@@ -27,14 +27,21 @@ _.extend(I.regional, {
       "LastPage": "Last",
       "Refresh": "Refresh",
       "NoResults": "There are no documents to display.",
-      "ErrorLoadingContents": "An error occurred while loading contents.",
       "GoToDetailsLink": "Go to details",
-      "AdvancedFilters": "Advanced filters"
+      "AdvancedFilters": "Advanced filters",
+      "TryAgain": "Try again",
+      "Roles": "Roles",
+      "Type": "Type",
+      "Kind": "Kind",
+      "Message": "Message",
+      "Callstack": "Callstack",
+      "Timestamp": "Timestamp"
     },
     "errors": {
       "emptyValue": "This field cannot be empty.",
       "email": "The value is not a valid email.",
-      "LoginFailed": "The email - password combination is not right."
+      "LoginFailed": "The email - password combination is not right.",
+      "LoadingData": "An error occurred while loading contents."
     },
     "dialogs": {
       "ErrorTitle": "Error",

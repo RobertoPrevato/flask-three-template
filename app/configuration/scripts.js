@@ -28,6 +28,7 @@ module.exports = {
       "/scripts/libs/knockout/ko-template-engine.js",
       "/scripts/libs/knockout/binders/ko-href.js",
       "/scripts/libs/knockout/binders/ko-src.js",
+      "/scripts/libs/knockout/binders/ko-id.js",
       "/scripts/libs/knockout/binders/ko-data.js",
       "/scripts/libs/knockout/binders/ko-modal.js",
       "/scripts/libs/knockout/binders/ko-menu.js",

@@ -3,20 +3,11 @@
 //
 R("app-services", [], function () {
   return {
-    getMessages: function (params) {
+    getList: function (params) {
       return $.ajax({
-        url: "/admin/getmessages"
-      });
-    },
-    getExceptions: function (params) {
-      return $.ajax({
-        url: "/admin/getexceptions"
-      });
-    },
-    getUsers: function (params) {
-      return $.ajax({
-        url: "/admin/getusers"
-      });
+        url: params.url,
+        context: params.context
+      }).promise();
     }
   };
 });

@@ -16,7 +16,7 @@ def errors_handlers(app):
         app.logger.error("Uncaught Exception", exc_info=exc_info)
 
         # try to log the exception also in db
-        app.dblogger.try_log_exception(exc_info[1])
+        app.reports.try_log_exception(exc_info[1])
 
         if development:
             # display error details in console
@@ -57,5 +57,8 @@ def errors_handlers(app):
     @app.errorhandler(500)
     def internal_server_error(error):
         """Handle 500 errors."""
+        if app.config["DEVELOPMENT"]:
+            # send error details
+            return error.message, 500
         return render_template("error/500.html"), 500
 

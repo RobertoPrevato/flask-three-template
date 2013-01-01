@@ -4,6 +4,7 @@
 R("users-panel", ["model", "app-services"], function (Model, Services) {
 
   return Model.extend({
+    id: "users-panel",
     template: "generic-panel",
 
     defaults: {
@@ -16,8 +17,8 @@ R("users-panel", ["model", "app-services"], function (Model, Services) {
       url: "/admin/getusers",
       useQueryString: false,
       columns: {
-        email: "Email",
-        roles: "Roles",
+        email: I.t("voc.Email"),
+        roles: I.t("voc.Roles"),
         data: {
           hidden: true,
           secret: true
@@ -27,23 +28,6 @@ R("users-panel", ["model", "app-services"], function (Model, Services) {
 
     initialize: function () {
 
-    },
-
-    loadList: function () {
-      Services.getUsers({
-        context: this
-      }).done(function (data) {
-
-      }).fail(function () {
-        this.error({
-          title: I.t("errors.LoadingContents")
-
-        });
-      });
-    },
-
-    loadDetails: function () {
-      console.log("TODO");
     }
   });
 });

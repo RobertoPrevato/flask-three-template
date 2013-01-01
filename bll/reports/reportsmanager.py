@@ -37,6 +37,7 @@ class ReportsManager():
         """
         if options is None:
             raise Exception("Missing pagination options.")
+        options["search_properties"] = ["message"]
         return self.options.store.get_messages(options)
 
 
@@ -48,6 +49,7 @@ class ReportsManager():
         """
         if options is None:
             raise Exception("Missing pagination options.")
+        options["search_properties"] = ["type", "message", "callstack"]
         return self.options.store.get_exceptions(options)
 
 

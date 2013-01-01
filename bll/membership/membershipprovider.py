@@ -103,6 +103,8 @@ class MembershipProvider:
         """
         Gets the list of all application accounts.
         """
+        # define searchable properties
+        options["search_properties"] = ["email", "roles"]
         data = self.options.store.get_accounts(options)
         # NB !!!
         # Salt and hashed password must be kept private in this case.

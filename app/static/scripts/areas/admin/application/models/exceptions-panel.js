@@ -4,29 +4,34 @@
 R("exceptions-panel", ["model", "app-services"], function (Model, Services) {
 
   return Model.extend({
+    id: "exceptions-panel",
     template: "generic-panel",
 
     defaults: {
       error: void(0),
       loading: false,
-      subtemplate: "exception-detail"
+      subtemplate: "tableview"
     },
 
     initialize: function () {
 
     },
 
-    loadList: function () {
-      Services.getUsers({
-        context: this
-      }).done(function (data) {
-
-      }).fail(function () {
-        this.error({
-          title: I.t("errors.LoadingContents")
-
-        });
-      });
-    }
+     table: {
+        url: "/admin/getexceptions",
+        useQueryString: false,
+        orderBy: "timestamp",
+        sortOrder: "desc",
+        columns: {
+          type: I.t("voc.Type"),
+          message: I.t("voc.Message"),
+          callstack: I.t("voc.Callstack"),
+          timestamp: I.t("voc.Timestamp"),
+          data: {
+            hidden: true,
+            secret: true
+          }
+        }
+      }
   });
 });

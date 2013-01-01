@@ -88,3 +88,33 @@ def admingetusers():
 
     data = app.membership.get_accounts(data)
     return json.dumps(data.__dict__)
+
+
+@admin.route("/admin/getmessages", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetmessages():
+    """Returns the list of application messages"""
+    data = request.get_json()
+    if data is None:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+
+    data = app.reports.get_messages(data)
+    # formatting is responsibility of presentation layer
+    for o in data.subset:
+        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
+    return json.dumps(data.__dict__)
+
+
+@admin.route("/admin/getexceptions", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetexceptions():
+    """Returns the list of application exceptions"""
+    data = request.get_json()
+    if data is None:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+
+    data = app.reports.get_exceptions(data)
+    # formatting is responsibility of presentation layer
+    for o in data.subset:
+        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
+    return json.dumps(data.__dict__)

@@ -1,4 +1,4 @@
-# `/dal.mongo` Data access layer to MongoDB
+## `/dal.mongo` Data access layer to MongoDB
 
 This folder contains data access code for a main application database using MongoDB.
 If your application needs more than one MongoDB database, add the settings to the configuration file as appropriate. 

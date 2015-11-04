@@ -1,4 +1,4 @@
-# `/tools.grunt` Grunt tasks
+## `/tools.grunt` Grunt tasks
 
 This folder contains grunt tasks to be used during development, and when producing a publish package.
 

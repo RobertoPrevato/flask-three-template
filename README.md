@@ -10,8 +10,11 @@ Project template for Python Flask three-tier web applications.
 * Skeleton for unit testing
 
 ## Dependencies
+* Python
+* [Flask](http://flask.pocoo.org/)
 * [Flask-Babel](https://pythonhosted.org/Flask-Babel/)
 ```bash
+$ sudo pip install Flask
 $ sudo pip install Flask-Babel
 ```
 

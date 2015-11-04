@@ -1,8 +1,5 @@
 import json
 from flask import Blueprint, request, render_template
-from app.decorators.crossdomain import crossdomain
-from core.encryption.aes import AesEncryptor
-from bll.managers.users.profiles_manager import ProfilesManager
 """
     Defines the routes for the public area.
 """

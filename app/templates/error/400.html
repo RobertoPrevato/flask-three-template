@@ -1,0 +1,4 @@
+{% extends "error/error.html" %}
+{%- block error -%}{{_("error.BadRequest")}}{%- endblock -%}
+{%- block code -%}400{%- endblock -%}
+{%- block message -%}{{_("error.BadRequestMessage")}}{%- endblock -%}

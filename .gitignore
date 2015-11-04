@@ -1,9 +1,15 @@
+## Ignore Linux files ending with ~
+*~
+# Ignore pyc files
+*.pyc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 
 # C extensions
 *.so
+
 
 # Distribution / packaging
 .Python
@@ -55,3 +61,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+.idea/

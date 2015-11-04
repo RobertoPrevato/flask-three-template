@@ -1,0 +1,4 @@
+{% extends "error/error.html" %}
+{%- block error -%}{{_("error.InternalServerError")}}{%- endblock -%}
+{%- block code -%}500{%- endblock -%}
+{%- block message -%}{{_("error.InternalServerErrorMessage")}}{%- endblock -%}

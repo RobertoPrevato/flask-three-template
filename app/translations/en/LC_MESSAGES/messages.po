@@ -1,0 +1,31 @@
+msgid "voc.Hello"
+msgstr "Hello"
+
+# pages
+msgid "home.title"
+msgstr "Flask three tier dashboard."
+msgid "home.description"
+msgstr "Project template for Flask Three-tier web applications."
+
+msgid "error.BadRequest"
+msgstr "Bad Request"
+msgid "error.BadRequestMessage"
+msgstr "Your request could not be processed."
+
+msgid "error.NotFound"
+msgstr "Not Found"
+msgid "error.NotFoundMessage"
+msgstr "The resource you are looking for was not found."
+
+msgid "error.InternalServerError"
+msgstr "Internal server error"
+msgid "error.InternalServerErrorMessage"
+msgstr "An internal error happened while performing the operation."
+
+msgid "error.Unauthorized"
+msgstr "Unauthorized"
+msgid "error.UnauthorizedMessage"
+msgstr "You are not authorized."
+
+msgid "error.MethodNotAllowed"
+msgstr "Method not allowed"

@@ -1,0 +1,4 @@
+{% extends "error/error.html" %}
+{%- block error -%}{{_("error.MethodNotAllowed")}}{%- endblock -%}
+{%- block code -%}405{%- endblock -%}
+{%- block message -%}{{ method }}{%- endblock -%}

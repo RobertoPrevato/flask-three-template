@@ -1,4 +1,5 @@
 ## `/app` Presentation layer
 
-- Presentation Tier: "Controllers and Views" from MVC Pattern, the actual Flask application.
+- Presentation tier: "controllers and views" from MVC Pattern, the actual Flask application.
+- 
 

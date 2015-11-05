@@ -2,8 +2,9 @@ from os import path, pardir
 
 # Flask configurations
 HOST = "0.0.0.0"
-PORT = 44660
+PORT = 44661
 DEBUG = False # NB: if the debugger is active, is not possible to debug using PyCharm
+DEVELOPMENT = True # if the server is running for development, then it is also serving static files
 
 # Keys
 ENCRYPTION_KEY = "LOREM_IPSUM"

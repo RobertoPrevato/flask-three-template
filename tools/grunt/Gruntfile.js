@@ -3,8 +3,6 @@ var path = require("path");
 module.exports = function (grunt) {
 
   var rel = "../../app/static";
-  var lessFiles = {};
-  lessFiles[rel + "/styles/shared.css"] = rel + "/styles/shared.less";
 
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
@@ -12,10 +10,11 @@ module.exports = function (grunt) {
     less: {
       shared: {
         options: {
-          paths: [rel + "/styles/shared/styles"],
           cleancss: true
         },
-        files: lessFiles
+        files: {
+          "../../app/static/styles/styles.css": "../../app/static/styles/styles.less"
+        }
       }
     },
 

@@ -8,6 +8,7 @@ Project template for Python Flask three-tier web applications.
 * Example files for production deployment using Nginx and uWSGI servers.
 * Skeleton for data access layers for MySQL and MongoDB.
 * Skeleton for unit testing
+* Custom error pages
 
 ## Dependencies
 * Python

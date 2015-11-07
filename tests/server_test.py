@@ -1,7 +1,6 @@
 import server
 import unittest
 
-
 class ServerTestCase(unittest.TestCase):
     """
       Generic server tests.
@@ -22,4 +21,4 @@ class ServerTestCase(unittest.TestCase):
 
     def test_homepage(self):
         rv = self.app.get('/')
-        assert "<title>" in rv.data
+        assert "<title>" in str(rv.data)

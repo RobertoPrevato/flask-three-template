@@ -11,10 +11,10 @@
  */
 module.exports = {
 
-  bundling: false,
-  minification: false,
+  "bundling": false,
+  "minification": false,
 
-  sets: {
+  "sets": {
 
     "libs": [
 

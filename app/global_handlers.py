@@ -6,7 +6,7 @@ def global_handlers(app):
     """
         Registers application global handlers.
     """
-    from app.helpers.resources import Resources
+    from app.helpers.resources import resources
 
     if app.config["DEVELOPMENT"]:
         # the server is running for development, so use it also to serve static files
@@ -33,7 +33,7 @@ def global_handlers(app):
             return copy
         helpers = {
             "static": lambda filename: url_for("static", filename=filename),
-            "resources": Resources,
+            "resources": resources,
             "copy": get_copy
         }
         return helpers

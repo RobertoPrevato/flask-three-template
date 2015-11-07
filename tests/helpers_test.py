@@ -21,5 +21,31 @@ class HelpersTestCase(unittest.TestCase):
 
 
     def test_resources_helper(self):
-        # TODO
+        from app.helpers.resources import resources, load_resources_config
+        # verify that no exception happen while reading the current resources configuration
+        load_resources_config()
+
+        test_conf = {
+            "bundling": False,
+            "minification": False,
+            "sets": {
+                "libs": [
+                    "/scripts/jquery.js",
+                    "/scripts/knockout.js",
+                    "/scripts/lodash.js"
+                ]
+            }
+        }
+
+        a = resources("libs", test_conf)
+        assert a == '<script src="/scripts/jquery.js"></script>\n<script src="/scripts/knockout.js"></script>\n<script src="/scripts/lodash.js"></script>'
+
+        test_conf["bundling"] = True
+        a = resources("libs", test_conf)
+        assert a == '<script src="/scripts/libs.built.js"></script>'
+
+        test_conf["minification"] = True
+        a = resources("libs", test_conf)
+        assert a == '<script src="/scripts/libs.min.js"></script>'
+
         assert True == True

@@ -7,17 +7,17 @@ Project template for Python Flask three-tier web applications.
 * Authentication and authorization strategies.
 * Example files for production deployment using Nginx and uWSGI servers.
 * Skeleton for data access layers for MySQL and MongoDB.
-* Skeleton for unit testing
-* Custom error pages
+* Skeleton for unit testing.
+* Custom error pages.
 
 ## Branches
-* [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy
-* [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy
+* [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.
+* [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy.
 
 ## Dependencies
-* Python
-* [Flask](http://flask.pocoo.org/)
-* [Flask-Babel](https://pythonhosted.org/Flask-Babel/)
+* Python.
+* [Flask](http://flask.pocoo.org/).
+* [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
 ```bash
 $ sudo pip install Flask
 $ sudo pip install Flask-Babel
@@ -29,5 +29,5 @@ $ sudo pip install Flask-Babel
 * Development server ready to use: Flask itself.
 
 ## Grunt integration
-* JavaScript bundling and minification strategy
+* JavaScript bundling and minification strategy.
 * LESS compilation.

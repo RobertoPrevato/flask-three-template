@@ -1,6 +1,7 @@
 from flask import url_for, request
 from app.handlers.errors_handlers import errors_handlers
 from app.handlers.locale_handlers import locale_handlers
+from app.handlers.authentication_handlers import authentication_handlers
 
 def global_handlers(app):
     """
@@ -13,6 +14,9 @@ def global_handlers(app):
         @app.route('/<path:path>')
         def static_proxy(path):
             return app.send_static_file(path)
+
+    # register authentication handlers
+    authentication_handlers(app)
 
     # register locale handlers
     locale_handlers(app)

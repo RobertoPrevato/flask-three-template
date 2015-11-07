@@ -21,6 +21,10 @@ def setup_app(**config_overrides):
     app.config.from_object("app.config")
     app.config.update(config_overrides)
 
+    # register global membership provider
+    from bll.membership import register_membership
+    register_membership(app)
+
     # apply global configuration
     global_handlers(app)
 

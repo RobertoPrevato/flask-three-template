@@ -6,7 +6,7 @@ app = None
 
 def setup_app(**config_overrides):
     """
-      This is normal setup code for a Flask app, but we give the option
+      This is normal setup code for a Flask app, but it's possible
       to provide override configurations so that in testing, a different
       database can be used.
     """

@@ -5,11 +5,12 @@ from functools import update_wrapper
 
 is_python3 = sys.version_info >= (3, 0)
 
+
 def isstring(value):
     if is_python3:
         return isinstance(value, str)
-    #python2
     return isinstance(value, basestring)
+
 
 def crossdomain(origin=None, methods=None, headers=None,
                 max_age=21600, attach_to_all=True,

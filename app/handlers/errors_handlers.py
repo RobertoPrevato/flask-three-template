@@ -7,10 +7,17 @@ def errors_handlers(app):
         Registers application errors handlers.
     """
 
+    development = app.config["DEVELOPMENT"]
+
     @app.errorhandler(Exception)
     def exception_handler(error):
         """Handle uncaught exceptions."""
         app.logger.error("Uncaught Exception", exc_info=sys.exc_info())
+
+        if development:
+            # display error details in console
+            print("ERROR: " + str(error))
+
         app.handle_exception(error)
 
     @app.errorhandler(400)

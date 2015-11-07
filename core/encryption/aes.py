@@ -37,5 +37,5 @@ class AesEncryptor:
         encrypted = base64.b64decode(encrypted)
         iv = encrypted[:16]
         aes = AES.new(encryptionKey, AES.MODE_CBC, iv)
-        return unpad(aes.decrypt(encrypted[16:]))
+        return unpad(aes.decrypt(encrypted[16:])).decode("utf-8")
 

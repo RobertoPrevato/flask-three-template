@@ -13,7 +13,8 @@ module.exports = function (grunt) {
           cleancss: true
         },
         files: {
-          "../../app/static/styles/styles.css": "../../app/static/styles/styles.less"
+          "../../app/static/styles/styles.css": "../../app/static/styles/styles.less",
+          "../../app/static/styles/areas/admin/styles.css": "../../app/static/styles/areas/admin/styles.less"
         }
       }
     },

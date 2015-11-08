@@ -1,0 +1,34 @@
+{%- extends "layout.html" -%}
+{%- block title -%}
+  {{_("adminlogin.title")}}
+{%- endblock -%}
+{%- block description -%}
+  {{_("adminlogin.description")}}
+{%- endblock -%}
+{%- block css -%}
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/styles/areas/admin/styles.css" />
+{%- endblock -%}
+{% block body %}
+  <div id="login-region">
+    <h2>{{ _("voc.Login") }}</h2>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="/admin/auth" method="post">
+      <dl>
+        <dt>
+          <label for="username">{{ _("voc.Username") }}</label>
+        </dt>
+        <dd><input id="username" type="text" name="username" /></dd>
+        <dt>
+          <label for="password">{{ _("voc.Password") }}</label>
+        </dt>
+        <dd><input id="password" type="password" name="password" /></dd>
+      </dl>
+      <div class="buttons">
+        <input type="submit" value="{{ _("voc.Login") }}" />
+      </div>
+    </form>
+  </div>
+{% endblock %}

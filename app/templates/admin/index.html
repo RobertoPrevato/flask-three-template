@@ -1,0 +1,18 @@
+{%- extends "layout.html" -%}
+{%- block title -%}
+  {{_("adminhome.title")}}
+{%- endblock -%}
+{%- block description -%}
+  {{_("adminhome.description")}}
+{%- endblock -%}
+{%- block css -%}
+  <link rel="stylesheet" href="/styles/styles.css" />
+{%- endblock -%}
+{% block body %}
+  <h2>{{ _("voc.Login") }}</h2>
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+  <h1>Admin Home</h1>
+  <p>...</p>
+{% endblock %}

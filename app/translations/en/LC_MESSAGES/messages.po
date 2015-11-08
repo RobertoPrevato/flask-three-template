@@ -7,6 +7,17 @@ msgstr "Flask three tier dashboard."
 msgid "home.description"
 msgstr "Project template for Flask Three-tier web applications."
 
+msgid "adminlogin.title"
+msgstr "Flask three tier admin login."
+msgid "adminlogin.description"
+msgstr "Project template for Flask Three-tier web applications."
+
+msgid "adminhome.title"
+msgstr "Flask three tier admin dashboard."
+msgid "adminhome.description"
+msgstr "Project template for Flask Three-tier web applications."
+
+# errors
 msgid "error.BadRequest"
 msgstr "Bad Request"
 msgid "error.BadRequestMessage"
@@ -29,3 +40,14 @@ msgstr "You are not authorized."
 
 msgid "error.MethodNotAllowed"
 msgstr "Method not allowed"
+
+msgid "error.InvalidFormData"
+msgstr "Invalid form data"
+
+# vocabulary
+msgid "voc.Login"
+msgstr "Login"
+msgid "voc.Username"
+msgstr "Username"
+msgid "voc.Password"
+msgstr "Password"

@@ -1,8 +1,8 @@
 
 class Bunch:
     """
-        The simple but handy "collector of a bunch of named stuff" class by Alex Martelli
-        http://code.activestate.com/recipes/52308-the-simple-but-handy-collector-of-a-bunch-of-named/
+    The simple but handy "collector of a bunch of named stuff" class by Alex Martelli
+    http://code.activestate.com/recipes/52308-the-simple-but-handy-collector-of-a-bunch-of-named/
     """
     def __init__(self, **kwds):
         self.__dict__.update(kwds)

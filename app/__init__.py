@@ -34,6 +34,10 @@ def setup_app(**config_overrides):
     # Register the logger
     register_logger(app)
 
+    # Register a db logger
+    from bll.reports import register_dblogger
+    register_dblogger(app)
+
     return app
 
 

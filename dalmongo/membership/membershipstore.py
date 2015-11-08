@@ -8,9 +8,10 @@
 import uuid
 from pymongo import ASCENDING
 from dalmongo import db
+from dalmongo.mongostore import MongoStore
 from core.collections.bunch import Bunch
 
-class MembershipStore:
+class MembershipStore(MongoStore):
     """
     Represents a Sessions and Accounts Storage manager for MongoDB utilized to manage Membership for an application.
     It can be used to handle global authentication; or per-area authentication.
@@ -237,16 +238,3 @@ class MembershipStore:
         collection = db[self.options.accounts_collection]
         condition = self.get_account_condition(userkey)
         collection.delete_one(condition)
-
-
-    @staticmethod
-    def normalize_id(data):
-        """
-        Normalize the given object id, replacing "_id" in "id"
-        The data access layer should return neutral objects, and the "_id" is a signature of MongoDB.
-        """
-        if data is None or not "_id" in data:
-            return data
-        data["id"] = str(data["_id"])
-        del data["_id"]
-        return data

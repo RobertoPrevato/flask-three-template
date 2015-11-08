@@ -2,7 +2,7 @@
 Project template for Python Flask three-tier web applications.
 
 ## Features
-* Project skeleton ready to use, to start developing a three tier web application using Flask for its presentation layer.
+* Project skeleton ready to use, to start a three tier web application using Flask for its presentation layer.
 * Localization strategy, using Flask-Babel.
 * Authentication and authorization strategies, including anonymous authentication.
 * Login mechanism protected against brute forcing (stores login attempts in DB).
@@ -12,6 +12,7 @@ Project template for Python Flask three-tier web applications.
 * Skeleton for data access layers for MySQL and MongoDB.
 * Skeleton for unit testing.
 * Custom error pages.
+* Application db logger, to store and retrieve messages and exceptions logs in database
 
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.

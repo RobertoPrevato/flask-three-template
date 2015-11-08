@@ -1,8 +1,8 @@
 
 class ObjDict(dict):
     """
-        Derived dictionary class, that allows to access dictionary items as object attributes.
-        http://goodcode.io/articles/python-dict-object/
+    Derived dictionary class, that allows to access dictionary items as object attributes.
+    http://goodcode.io/articles/python-dict-object/
     """
     def __getattr__(self, name):
         if name in self:

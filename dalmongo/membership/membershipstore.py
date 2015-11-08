@@ -12,9 +12,9 @@ from core.collections.bunch import Bunch
 
 class MembershipStore:
     """
-        Represents a Sessions and Accounts Storage manager for MongoDB utilized to manage Membership for an application.
-        It can be used to handle global authentication; or per-area authentication.
-        Contains data access logic for accounts and sessions.
+    Represents a Sessions and Accounts Storage manager for MongoDB utilized to manage Membership for an application.
+    It can be used to handle global authentication; or per-area authentication.
+    Contains data access logic for accounts and sessions.
     """
 
     defaults =  {

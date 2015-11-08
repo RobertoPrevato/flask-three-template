@@ -16,10 +16,10 @@ from bll.membership.session import Session
 
 class MembershipProvider:
     """
-        Provides business logic to provide user authentication.
-        Generic MembershipProvider utilized to manage Membership for an application.
-        It can be used to handle global authentication; or per-area authentication.
-        Contains business logic for Login, Logout, ChangePassword.
+    Provides business logic to provide user authentication.
+    Generic MembershipProvider utilized to manage Membership for an application.
+    It can be used to handle global authentication; or per-area authentication.
+    Contains business logic for Login, Logout, ChangePassword.
     """
 
     defaults =  {

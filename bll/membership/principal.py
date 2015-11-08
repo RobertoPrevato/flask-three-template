@@ -8,7 +8,7 @@
 
 class Principal:
     """
-        Generic security principal used to implement authentication.
+    Generic security principal used to implement authentication.
     """
     def __init__(self, _id, identity, session, authenticated):
         self.id = _id

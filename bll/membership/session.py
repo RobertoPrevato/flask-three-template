@@ -8,7 +8,7 @@
 
 class Session:
     """
-        Generic object used for session management.
+    Generic object used for session management.
     """
     def __init__(self, obj_id, guid, user_id, expiration, anonymous):
         self.id = obj_id

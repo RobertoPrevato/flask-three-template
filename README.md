@@ -9,7 +9,7 @@ Project template for Python Flask three-tier web applications.
 * DB based sessions strategy.
 * MongoDB collections for accounts, sessions, login attempts.
 * Example files for production deployment using Nginx and uWSGI servers.
-* Skeleton for data access layers for MySQL and MongoDB.
+* Skeleton for data access layers for MongoDB.
 * Skeleton for unit testing.
 * Custom error pages.
 * Application db logger, to store and retrieve messages and exceptions logs in database

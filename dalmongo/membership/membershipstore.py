@@ -4,10 +4,6 @@
 *
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/MIT
-*
-* Represents a Sessions and Accounts Storage manager for MongoDB utilized to manage Membership for an application.
-* It can be used to handle global authentication; or per-area authentication.
-* Contains data access logic for accounts and sessions.
 """
 import uuid
 from pymongo import ASCENDING
@@ -15,6 +11,11 @@ from dalmongo import db
 from core.collections.bunch import Bunch
 
 class MembershipStore:
+    """
+        Represents a Sessions and Accounts Storage manager for MongoDB utilized to manage Membership for an application.
+        It can be used to handle global authentication; or per-area authentication.
+        Contains data access logic for accounts and sessions.
+    """
 
     defaults =  {
       "accounts_collection": "accounts",

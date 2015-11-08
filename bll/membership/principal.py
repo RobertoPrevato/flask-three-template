@@ -4,12 +4,12 @@
 *
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/MIT
-*
-* Generic security principal used to implement authentication.
 """
 
 class Principal:
-
+    """
+        Generic security principal used to implement authentication.
+    """
     def __init__(self, _id, identity, session, authenticated):
         self.id = _id
         self.identity = identity
@@ -19,6 +19,11 @@ class Principal:
 
 
     def is_in_role(self, role):
+        """
+        Returns true if the principal identity has a role, false otherwise.
+        :param role: string role name.
+        :return: bool
+        """
         if self.identity is None:
             return False
         return role in self.identity.roles

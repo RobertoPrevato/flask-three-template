@@ -4,10 +4,6 @@
 *
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/MIT
-*
-* Represents a generic MembershipProvider utilized to manage Membership for an application.
-* It can be used to handle global authentication; or per-area authentication.
-* Contains business logic for Login, Logout, ChangePassword.
 """
 from bll.membership.membershipprovider import MembershipProvider
 

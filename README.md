@@ -24,9 +24,13 @@ Project template for Python Flask three-tier, Single Page Applications using the
 * Python.
 * [Flask](http://flask.pocoo.org/).
 * [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
+* pymongo
+* pycrypto
 ```bash
 $ sudo pip install Flask
 $ sudo pip install Flask-Babel
+$ sudo pip install pymongo
+$ sudo pip install pycrypto
 ```
 
 ## Servers setup

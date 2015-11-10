@@ -9,16 +9,18 @@
  * http://www.opensource.org/licenses/MIT
  */
 
+@import "shared/shared.less";
+
 body {
   margin: 0px 0px 40px 0px;
   padding: 0px;
-  font-family: Tahoma,Helvetica,Geneva;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 #content {
-  padding: 0;
+  padding: 0 25px;
 }
 
 #logo-region {
@@ -29,41 +31,6 @@ body {
 h1 {
   font-size: 28px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-#header {
-  border-bottom: 1px solid #666;
-  h1 {
-    padding: 0 20px;
-    margin: 10px 0 15px 5px;
-    > span {
-      font-size: 18px;
-    }
-  }
-  h6 {
-    color: #fff;
-    float: right;
-    font-size: .7em;
-    margin-top: 21px;
-    a {
-      text-decoration: none;
-      color: white;
-    }
-  }
-  label, select {
-    font-size: 12px;
-  }
-  label {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  select {
-    margin-bottom: 12px;
-  }
-}
-
-#content {
-  padding: 0;
 }
 
 .error {

@@ -17,11 +17,50 @@ module.exports = {
   "sets": {
 
     "libs": [
-
+      "/scripts/libs/lodash.js",
+      "/scripts/libs/jquery.js",
+      "/scripts/libs/simrou.js",
+      "/scripts/libs/bootstrap.js",
+      "/scripts/libs/r.js",
+      "/scripts/libs/i.js",
+      "/scripts/libs/knockout.js",
+      "/scripts/libs/knockout/ko-shortcuts.js",
+      "/scripts/libs/knockout/ko-template-engine.js",
+      "/scripts/libs/knockout/binders/ko-href.js",
+      "/scripts/libs/knockout/binders/ko-src.js",
+      "/scripts/libs/knockout/binders/ko-data.js",
+      "/scripts/libs/knockout/binders/ko-modal.js",
+      "/scripts/libs/plugins/jquery-dataentry.js",
+      "/scripts/libs/plugins/jquery-dataentry-knockout.js",
+      "/scripts/shared/components/extend.js",
+      "/scripts/shared/components/events.js",
+      "/scripts/areas/common/templates.js",
+      "/scripts/areas/common/core/models/model.js",
+      "/scripts/areas/common/setup.js",
+      "/scripts/areas/common/app.js",
+      "/scripts/areas/common/routes.js"
     ],
-    
-    "public": [
 
+    "admin": [
+      "/scripts/libs/plugins/jquery.kingtable.min.js"
+    ],
+
+    "admin-login": [
+      "/scripts/areas/admin/templates.js",
+      "/scripts/areas/admin/login/services.js",
+      "/scripts/areas/admin/login/models/panel.js",
+      "/scripts/areas/admin/login/routes.js"
+    ],
+
+    "public": [
+      "/scripts/areas/public/templates.js",
+      "/scripts/areas/public/locale/en.js",
+      "/scripts/areas/public/dashboard/models/panel.js",
+      "/scripts/areas/public/dashboard/services.js",
+      "/scripts/areas/public/dashboard/routes.js",
+      "/scripts/areas/public/help/models/panel.js",
+      "/scripts/areas/public/help/routes.js",
+      "/scripts/areas/public/start.js"
     ]
   }
 };

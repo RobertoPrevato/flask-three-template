@@ -1,0 +1,24 @@
+<div class="btn-group" data-bind="css: css">
+  <button type="button" class="btn btn-default" data-bind="text: text"></button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">{{I.t("voc.ToggleDrop")}}</span>
+  </button>
+  <ul class="dropdown-menu">
+    <!--ko foreach: items-->
+    <!--ko if: $data.separator-->
+    <li role="separator" class="divider"></li>
+    <!--/ko-->
+    <!--ko ifnot: $data.separator-->
+    <li data-bind="click: $parent.setitem.bind($parent)">
+    <!--ko if: $data.href-->
+    <a data-bind="href: href, text: text"></a>
+    <!--/ko-->
+    <!--ko ifnot: $data.href-->
+    <span tabindex="0" data-bind="text: text"></span>
+    <!--/ko-->
+    </li>
+    <!--/ko-->
+    <!--/ko-->
+  </ul>
+</div>

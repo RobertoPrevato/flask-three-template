@@ -1,0 +1,12 @@
+﻿<!--template="error-panel"-->
+<div class="main-error">
+  <div class="alert" data-bind="css: 'alert-' + (status || 'danger')">
+    <h2 data-bind="text: title"></h2>
+    <!--ko if: $data.message-->
+    <p data-bind="text: message"></p>
+    <!--/ko-->
+    <!--ko if: $data.retry-->
+    <button class="btn" data-bind="click: retry">@I.t("voc.TryAgain")@</button>
+    <!--/ko-->
+  </div>
+</div>

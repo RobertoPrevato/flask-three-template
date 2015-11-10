@@ -1,0 +1,7 @@
+<!--template="view"-->
+<!--ko if: dialog()-->
+<div data-bind="template: { name: dialog().type, data: dialog }"></div>
+<!--/ko-->
+<!--ko if: template() && panel()-->
+<div data-bind="template: { name: template(), data: panel }"></div>
+<!--/ko-->

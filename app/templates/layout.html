@@ -29,11 +29,18 @@
       <img src="/styles/logo.png" alt="Roberto Prevato" width="91" height="50">
       <h6><a href="https://github.com/RobertoPrevato/Flask-three-template">Roberto Prevato - roberto.prevato@gmail.com</a></h6>
     </div>
-    <h1>Flask Three-tier Project Template</h1>
+    <h1>Flask-Humbular Project Template</h1>
+    <div>
+      <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#/">Homepage</a></li>
+        <li role="presentation" class="active"><a href="#/getting-started">Getting started</a></li>
+      </ul>
+    </div>
   </header>
   <div id="content">
     {%- block body -%}{%- endblock -%}
   </div>
+  {{ resources("libs") | safe }}
   {%- block js -%}{%- endblock -%}
 </body>
 </html>

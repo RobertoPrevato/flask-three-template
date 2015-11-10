@@ -1,0 +1,32 @@
+<h2>Getting started</h2>
+<ol>
+  <li>
+    See how this page is working.
+  </li>
+  <li>
+    <button class="btn" data-bind="click: open_dialog">And how Knockout works (how models, views and templates interacts).</button>
+  </li>
+</ol>
+<!--ko if: dialog()-->
+<div data-bind="template: { name: 'generic-dialog', data: dialog }"></div>
+<!--/ko-->
+
+<h3>How to define client side routes</h3>
+<ol>
+  <li>Organize the routes per area, defining modules using R.js</li>
+  <li>See the example included in the repository</li>
+  <li>Refer to <a href="https://github.com/buero-fuer-ideen/Simrou" target="_blank">Simrou documentation</a></li>
+</ol>
+<h3>Client side code organization</h3>
+<ol>
+  <li>Keep your ajax requests code in dedicated files (services.js)</li>
+  <li>Perform DOM manipulation in custom Knockout binders</li>
+  <li>Keep your models clean, use the provided base <strong>model</strong> function and its <strong>extend</strong> function.</li>
+</ol>
+<h3>Tools</h3>
+<ol>
+  <li>The project template includes Grunt to compile LESS code into CSS, and to bundle and minify JavaScript.</li>
+  <li>(Recommended) use the <a href="https://github.com/RobertoPrevato/Knight" target="_blank">Knight tool</a> to generate external html templates.</li>
+</ol>
+<hr />
+<!--ko template: 'links'--><!--/ko-->

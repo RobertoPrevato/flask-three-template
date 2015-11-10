@@ -12,6 +12,6 @@
   {# insert here html specific for this page #}
 {%- endblock -%}
 {%- block js -%}
-  {# insert here <script> elements specific for this page #}
+  {{ resources("public") | safe }}
 {%- endblock -%}
 

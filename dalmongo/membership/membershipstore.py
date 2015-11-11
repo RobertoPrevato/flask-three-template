@@ -99,6 +99,8 @@ class MembershipStore(MongoStore):
         """
         collection = db[self.options.sessions_collection]
         data = collection.find_one({ "guid": sessionkey })
+        #set user key
+        data["userkey"] = data[self.options.user_key_field]
         return self.normalize_id(data)
 
 
@@ -226,8 +228,8 @@ class MembershipStore(MongoStore):
         :param data: new account data
         """
         collection = db[self.options.accounts_collection]
-        self.get_account_condition(userkey)
-        collection.update_one(condition, data)
+        condition = self.get_account_condition(userkey)
+        collection.update_one(condition, { "$set": data })
 
 
     def delete_account(self, userkey):

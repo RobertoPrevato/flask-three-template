@@ -283,11 +283,11 @@ class MembershipProvider:
         }
 
         # get account data
-        account = self.options.store.get_account(session.user_id)
+        account = self.options.store.get_account(session.userkey)
         # return session and account data
         return True, {
-            "principal": Principal(account_data["id"],
-                                   account_data,
+            "principal": Principal(account["id"],
+                                   account,
                                    session,
                                    True),
             "session": session

@@ -79,6 +79,7 @@ def authentication_handlers(app):
     @app.after_request
     def set_auth_cookie(response):
         set_session_cookie = hasattr(request, "set_session_cookie")
+        unset_session_cookie = hasattr(request, "unset_session_cookie")
         if set_session_cookie:
             session = request.session
             session_guid = str(session.guid)
@@ -90,5 +91,8 @@ def authentication_handlers(app):
                                 expires=session.expiration,
                                 httponly=True,
                                 secure=SECURE_COOKIES)
+        if unset_session_cookie:
+            # instruct the browser to delete the session cookie
+            response.set_cookie(session_cookie, value="", expires=0)
         return response
 

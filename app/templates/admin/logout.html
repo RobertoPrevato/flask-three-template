@@ -1,0 +1,16 @@
+{%- extends "layout.html" -%}
+{%- block title -%}
+  {{_("adminlogout.title")}}
+{%- endblock -%}
+{%- block description -%}
+  {{_("adminlogout.description")}}
+{%- endblock -%}
+{%- block css -%}
+  <link rel="stylesheet" href="/styles/styles.css" />
+{%- endblock -%}
+{% block body %}
+  <h1>Thanks for using the Flask-Three-template administrative interface.</h1>
+  <p>You`ve been successfully logged out from the system.</p>
+{% endblock %}
+{%- block js -%}
+{%- endblock -%}

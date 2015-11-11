@@ -14,14 +14,10 @@ Project template for Python Flask three-tier web applications.
 * [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy.
 * [spa-humbular](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular): template with Humbular Single Page Application strategy.
 
-## Dependencies
-* Python.
+## How to prepare the environment
 * [Flask](http://flask.pocoo.org/).
 * [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
-```bash
-$ sudo pip install Flask
-$ sudo pip install Flask-Babel
-```
+Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Preparing-the-environment), for instructions about how to prepare the environment and install the dependencies.
 
 ## Servers setup
 * Basic settings file for Nginx.

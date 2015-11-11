@@ -43,7 +43,13 @@ module.exports = {
     ],
 
     "admin": [
-      "/scripts/libs/plugins/jquery.kingtable.min.js"
+      "/scripts/libs/plugins/jquery.kingtable.min.js",
+      "/scripts/areas/admin/templates.js",
+      "/scripts/areas/admin/locale/en.js",
+      "/scripts/areas/admin/dashboard/services.js",
+      "/scripts/areas/admin/dashboard/models/dashboard.js",
+      "/scripts/areas/admin/dashboard/routes.js",
+      "/scripts/areas/admin/start.js"
     ],
 
     "admin-login": [

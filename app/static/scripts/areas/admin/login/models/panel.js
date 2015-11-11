@@ -15,7 +15,7 @@ R("admin-login-panel", ["app", "browser", "model", "adminlogin-services"], funct
     },
 
     initialize: function () {
-      window.panel = this;
+
     },
 
     // validation schema
@@ -59,6 +59,5 @@ R("admin-login-panel", ["app", "browser", "model", "adminlogin-services"], funct
         self.submitting = false;
       });
     }
-
   });
 });

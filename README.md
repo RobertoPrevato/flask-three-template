@@ -17,6 +17,7 @@ Project template for Python Flask three-tier web applications.
 ## How to prepare the environment
 * [Flask](http://flask.pocoo.org/).
 * [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
+
 Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Preparing-the-environment), for instructions about how to prepare the environment and install the dependencies.
 
 ## Servers setup

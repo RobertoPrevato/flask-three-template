@@ -34,6 +34,7 @@ module.exports = {
       "/scripts/libs/plugins/jquery-dataentry-knockout.js",
       "/scripts/shared/components/extend.js",
       "/scripts/shared/components/events.js",
+      "/scripts/shared/browser/browser.js",
       "/scripts/areas/common/templates.js",
       "/scripts/areas/common/core/models/model.js",
       "/scripts/areas/common/setup.js",
@@ -46,10 +47,13 @@ module.exports = {
     ],
 
     "admin-login": [
+      "/scripts/areas/common/validation/email.js",
       "/scripts/areas/admin/templates.js",
+      "/scripts/areas/admin/locale/en.js",
       "/scripts/areas/admin/login/services.js",
       "/scripts/areas/admin/login/models/panel.js",
-      "/scripts/areas/admin/login/routes.js"
+      "/scripts/areas/admin/login/routes.js",
+      "/scripts/areas/admin/start.js"
     ],
 
     "public": [

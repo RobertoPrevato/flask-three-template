@@ -1,24 +1,27 @@
 //
 //  Admin login panel
 //
-R("admin-login-panel", ["model", "adminlogin-services"], function (Model, Services) {
+R("admin-login-panel", ["app", "browser", "model", "adminlogin-services"], function (app, Browser, Model, Services) {
 
   return Model.extend({
 
     template: "login",
 
     defaults: {
-
+      email: "",
+      password: "",
+      remember: false,
+      error: void(0)
     },
 
     initialize: function () {
-
+      window.panel = this;
     },
 
     // validation schema
     schema: {
-      username: {
-        validation: ["required"]
+      email: {
+        validation: ["required", "email"]
       },
 
       password: {
@@ -27,19 +30,33 @@ R("admin-login-panel", ["model", "adminlogin-services"], function (Model, Servic
     },
 
     submit: function () {
-      if (this.submitting) return false;
-      this.submitting = true;
+      var self = this;
+      if (self.submitting) return false;
+      self.submitting = true;
 
-      this.validate().done(function () {
+      self.validate().done(function (data) {
         //try login
-        Services.tryLogin({
-          context: this
+        Services.login({
+          context: self,
+          email: data.email,
+          password: data.password,
+          remember: self.remember(),
+          navigator: Browser.getNavigatorInfo()
         }).done(function (data) {
-
-
+          if (data.success) {
+            //redirect to admin dashboard
+            location.replace("/admin");
+          } else {
+            //display an error message
+            self.error(I.t("errors.LoginFailed"));
+            self.submitting = false;
+          }
         }).fail(function () {
-
+          app.errorDialog();
+          self.submitting = false;
         });
+      }).fail(function () {
+        self.submitting = false;
       });
     }
 

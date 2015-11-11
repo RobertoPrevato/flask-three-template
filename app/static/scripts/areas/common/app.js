@@ -113,8 +113,20 @@ R("app", [], function () {
     bind: function () {
       var el = document.getElementById("content");
       el.setAttribute("data-bind", "template: 'view'");
-      ko.bind(this, el);
+      ko.bind(this, document.body);
       return this;
+    },
+
+    /**
+     * Displays an error modal dialog.
+     */
+    errorDialog: function (params) {
+      var options = _.extend({
+        type: "generic-dialog",
+        title: I.t("dialogs.ErrorTitle"),
+        content: I.t("dialogs.GenericError")
+      }, params);
+      return this.dialog(options);
     }
   };
 

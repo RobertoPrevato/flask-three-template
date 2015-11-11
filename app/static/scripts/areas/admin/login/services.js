@@ -5,12 +5,16 @@ R("adminlogin-services", [], function () {
   return {
     login: function (params) {
       return $.ajax({
-        url: "/admin/login",
-        method: "POST",
-        data: {
-          username: params.username,
-          password: params.password
-        },
+        url: "/admin/auth",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify({
+          email: params.email,
+          password: params.password,
+          remember: params.remember,
+          navigator: params.navigator
+        }),
         context: params.context
       }).promise();
     }

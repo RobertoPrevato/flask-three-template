@@ -19,8 +19,10 @@ def resources(names, conf = None):
     if Text.isstring(names):
         names = [names]
 
+    from app.config import DEVELOPMENT
+
     if conf is None:
-        if CONFIGURATION is None:
+        if CONFIGURATION is None or DEVELOPMENT == True:
             CONFIGURATION = load_resources_config()
         conf = CONFIGURATION
 

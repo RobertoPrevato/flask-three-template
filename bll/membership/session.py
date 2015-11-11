@@ -10,10 +10,10 @@ class Session:
     """
     Generic object used for session management.
     """
-    def __init__(self, obj_id, guid, user_id, expiration, anonymous):
+    def __init__(self, obj_id, guid, userkey, expiration, anonymous):
         self.id = obj_id
         self.guid = guid
-        self.user_id = user_id
+        self.userkey = userkey
         self.expiration = expiration
         self.anonymous = anonymous
 
@@ -27,6 +27,6 @@ class Session:
         """
         return Session(data["id"],
                        data["guid"],
-                       data["user_id"] if "user_id" in data else None,
+                       data["userkey"] if "userkey" in data else None,
                        data["expiration"],
                        data["anonymous"])

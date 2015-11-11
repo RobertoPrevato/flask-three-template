@@ -8,6 +8,14 @@
 {%- block css -%}
   <link rel="stylesheet" href="styles/styles.css" />
 {%- endblock -%}
+{%- block nav -%}
+    <div>
+      <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#/">Homepage</a></li>
+        <li role="presentation" class="active"><a href="#/getting-started">Getting started</a></li>
+      </ul>
+    </div>
+{%- endblock -%}
 {%- block body -%}
   {# insert here html specific for this page #}
 {%- endblock -%}

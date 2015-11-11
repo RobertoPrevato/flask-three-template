@@ -24,6 +24,6 @@ class Principal:
         :param role: string role name.
         :return: bool
         """
-        if self.identity is None:
+        if self.identity is None or "roles" not in self.identity:
             return False
-        return role in self.identity.roles
+        return role in self.identity["roles"]

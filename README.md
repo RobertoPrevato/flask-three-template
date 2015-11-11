@@ -23,14 +23,8 @@ Project template for Python Flask three-tier web applications.
 * Python.
 * [Flask](http://flask.pocoo.org/).
 * [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
-* pymongo
-* pycrypto
-```bash
-$ sudo pip install Flask
-$ sudo pip install Flask-Babel
-$ sudo pip install pymongo
-$ sudo pip install pycrypto
-```
+* pymongo.
+* pycrypto.
 
 ## Servers setup
 * Basic settings file for Nginx.

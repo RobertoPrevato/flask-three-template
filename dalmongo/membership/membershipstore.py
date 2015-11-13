@@ -91,6 +91,14 @@ class MembershipStore(MongoStore):
         return self.normalize_id(data)
 
 
+    def get_accounts(self, options):
+        """
+        Gets a list of all application accounts.
+        """
+        collection = db[self.options.accounts_collection]
+        return self.get_catalog_page(collection, options)
+
+
     def get_session(self, sessionkey):
         """
         Gets the session with the given key.
@@ -129,7 +137,7 @@ class MembershipStore(MongoStore):
         return self.normalize_id(data)
 
 
-    def create_account(self, userkey, hashedpassword, salt, data):
+    def create_account(self, userkey, hashedpassword, salt, data, roles = None):
         """
         Creates a new account
         :param userkey: user key (e.g. email or username)
@@ -142,7 +150,8 @@ class MembershipStore(MongoStore):
             self.options.user_key_field: userkey,
             "hash": hashedpassword,
             "salt": salt,
-            "data": data
+            "data": data,
+            "roles": roles
         }
         result = collection.insert_one(account_data)
         return {

@@ -5,6 +5,7 @@
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/MIT
 """
+import re
 from core.collections.catalogs import CatalogPage
 
 class MongoStore():

@@ -1,12 +1,11 @@
+//
+// The super useful events borrowed from the Backbone library.
+//
 R("events", [], function () {
-  // Backbone.Events
-  // ---------------
-  // Create local references to array methods we'll want to use later.
+
   var array = [];
-  var push = array.push;
   var slice = array.slice;
-  var splice = array.splice;
-  
+
   // A module that can be mixed in to *any object* in order to provide it with
   // custom events. You may bind with `on` or remove with `off` callback
   // functions to an event; `trigger`-ing an event fires all callbacks in

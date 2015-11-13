@@ -56,7 +56,7 @@ def main(options):
             print("error: argument -p/--password is required")
             return
 
-        success, result = membership.create_account(options.userkey, options.password)
+        success, result = membership.create_account(options.userkey, options.password, None, options.roles)
         if success:
             print("Account created successfully")
 

@@ -10,6 +10,43 @@
   <link rel="stylesheet" href="/styles/areas/admin/styles.css" />
   <link rel="stylesheet" href="/styles/areas/admin/kingtable.core.css" />
 {%- endblock -%}
+{% block nav %}
+  <div class="ug-menu-strip">
+    <div class="ug-menu-wrapper">
+      <span tabindex="0" class="ug-expander" aria-expanded="true">
+        Application
+      </span>
+      <ul class="ug-menu">
+        <li>
+          <a href="#/users">Users</a>
+        </li>
+        <li>
+          <a href="#/messages">Messages</a>
+        </li>
+        <li>
+          <a href="#/exceptions">Exceptions</a>
+        </li>
+      </ul>
+    </div>
+    <div class="ug-menu-wrapper">
+      <span tabindex="0" class="ug-expander" aria-expanded="true">
+        Store
+      </span>
+      <ul class="ug-menu">
+        <li>
+          <a href="#/authors">Authors</a>
+        </li>
+        <li>
+          <a href="#/books">Books</a>
+        </li>
+        <li>
+          <a href="#/publishers">Publishers</a>
+        </li>
+      </ul>
+    </div>
+    <br class="break" />
+  </div>
+{% endblock %}
 {% block body %}
 
 {% endblock %}

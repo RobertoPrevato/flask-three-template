@@ -76,3 +76,15 @@ def adminauth():
 def admindashboard():
     """Renders the administrative side dashboard"""
     return render_template("admin/index.html")
+
+
+@admin.route("/admin/getusers", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetusers():
+    """Returns the list of application users"""
+    data = request.get_json()
+    if data is None:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+
+    data = app.membership.get_accounts(data)
+    return json.dumps(data.__dict__)

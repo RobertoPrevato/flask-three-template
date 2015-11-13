@@ -1,6 +1,8 @@
+//
+// The super useful extend function, borrowed from the Backbone library.
+//
 R("extend", [], function () {
-  
-  //returns the super useful extend function taken from Backbone
+
   return function (protoProps, staticProps) {
     var parent = this;
     var child;

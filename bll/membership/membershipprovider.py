@@ -71,6 +71,7 @@ class MembershipProvider:
         if params["store"] is None:
           raise Exception("Missing `store` option")
         req = ["get_account",
+               "get_accounts",
                "get_session",
                "create_account",
                "update_account",
@@ -98,7 +99,31 @@ class MembershipProvider:
         return result
 
 
-    def create_account(self, userkey, password, data = None):
+    def get_accounts(self, options):
+        """
+        Gets the list of all application accounts.
+        """
+        data = self.options.store.get_accounts(options)
+        # NB !!!
+        # Salt and hashed password must be kept private in this case.
+        for item in data.subset:
+            self.prepare_account_data(item)
+        return data
+
+
+    def prepare_account_data(self, account):
+        """
+        Prepares account data, to share it outside of bll.
+        Salt and hashed password must be never get out of bll.
+        """
+        del account["salt"]
+        del account["hash"]
+        if "roles" not in account:
+            account["roles"] = []
+        return account
+
+
+    def create_account(self, userkey, password, data = None, roles = None):
         """
         Creates a new user account in db
         :param userkey: key of the user (e.g. email or username)
@@ -112,6 +137,8 @@ class MembershipProvider:
             return False, "AccountAlreadyExisting"
         if data is None:
             data = {}
+        if roles is None:
+            roles = []
         salt = self.get_new_salt()
         hashedpassword = self.get_hash(password, salt)
         now = datetime.datetime.now()
@@ -119,7 +146,7 @@ class MembershipProvider:
         if self.options.requires_account_confirmation:
             # set a confirmation token inside the account data
             data["confirmation_token"] = uuid.uuid1()
-        return True, self.options.store.create_account(userkey, hashedpassword, salt, data)
+        return True, self.options.store.create_account(userkey, hashedpassword, salt, data, roles)
 
 
     def delete_account(self, userkey):
@@ -217,6 +244,7 @@ class MembershipProvider:
         # save session
         session = self.options.store.create_session(userkey, expiration, client_ip, client_data)
 
+        self.prepare_account_data(account_data)
         return True, {
             "principal": Principal(account_data.id,
                                    account_data,
@@ -284,6 +312,10 @@ class MembershipProvider:
 
         # get account data
         account = self.options.store.get_account(session.userkey)
+
+        if account is None:
+            return False, None
+
         # return session and account data
         return True, {
             "principal": Principal(account["id"],

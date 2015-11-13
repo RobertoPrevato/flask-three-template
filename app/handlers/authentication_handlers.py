@@ -72,6 +72,8 @@ def authentication_handlers(app):
                 setattr(request, "user", principal)
                 setattr(request, "session", session)
             else:
+                # set a flag to unset session cookie
+                request.unset_session_cookie = True
                 # initialize an anonymous session
                 initialize_anonymous_session()
 

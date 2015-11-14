@@ -107,6 +107,8 @@ class MembershipStore(MongoStore):
         """
         collection = db[self.options.sessions_collection]
         data = collection.find_one({ "guid": sessionkey })
+        if not data:
+            return None
         #set user key
         data["userkey"] = data[self.options.user_key_field]
         return self.normalize_id(data)

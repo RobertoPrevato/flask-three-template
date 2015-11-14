@@ -246,7 +246,8 @@ class MembershipProvider:
         # save session
         session = self.options.store.create_session(userkey, expiration, client_ip, client_data)
 
-        self.prepare_account_data(account_data)
+        del account_data.salt
+        del account_data.hash
         return True, {
             "principal": Principal(account_data.id,
                                    account_data,

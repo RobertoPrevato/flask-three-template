@@ -23,11 +23,7 @@ R("messages-panel", ["model", "app-services"], function (Model, Services) {
       columns: {
         kind: I.t("voc.Kind"),
         message: I.t("voc.Message"),
-        timestamp: I.t("voc.Timestamp"),
-        data: {
-          hidden: true,
-          secret: true
-        }
+        timestamp: I.t("voc.Timestamp")
       }
     }
   });

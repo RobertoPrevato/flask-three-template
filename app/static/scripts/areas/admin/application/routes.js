@@ -6,7 +6,8 @@ R("users.admin.routes", [
   "routes",
   "users-panel",
   "messages-panel",
-  "exceptions-panel"], function (app, Routes, UsersPanel, MessagesPanel, ExceptionsPanel) {
+  "exceptions-panel",
+  "sessions-panel"], function (app, Routes, UsersPanel, MessagesPanel, ExceptionsPanel, SessionsPanel) {
 
   _.extend(Routes, {
     "/users": {
@@ -22,6 +23,11 @@ R("users.admin.routes", [
     "/messages": {
       get: function (e, params) {
         app.go(MessagesPanel, params);
+      }
+    },
+    "/sessions": {
+      get: function (e, params) {
+        app.go(SessionsPanel, params);
       }
     }
   });

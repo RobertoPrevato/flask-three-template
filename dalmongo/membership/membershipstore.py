@@ -99,6 +99,14 @@ class MembershipStore(MongoStore):
         return self.get_catalog_page(collection, options)
 
 
+    def get_sessions(self, options):
+        """
+        Gets a list of current sessions.
+        """
+        collection = db[self.options.sessions_collection]
+        return self.get_catalog_page(collection, options)
+
+
     def get_session(self, sessionkey):
         """
         Gets the session with the given key.
@@ -107,6 +115,8 @@ class MembershipStore(MongoStore):
         """
         collection = db[self.options.sessions_collection]
         data = collection.find_one({ "guid": sessionkey })
+        if not data:
+            return None
         #set user key
         data["userkey"] = data[self.options.user_key_field]
         return self.normalize_id(data)

@@ -35,7 +35,11 @@ _.extend(I.regional, {
       "Kind": "Kind",
       "Message": "Message",
       "Callstack": "Callstack",
-      "Timestamp": "Timestamp"
+      "Timestamp": "Timestamp",
+      "ClientIp": "Client ip",
+      "Anonymous": "Anonymous",
+      "UserAgent": "User-Agent",
+      "Expiration": "Expiration"
     },
     "errors": {
       "emptyValue": "This field cannot be empty.",

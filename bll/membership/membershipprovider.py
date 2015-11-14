@@ -113,6 +113,19 @@ class MembershipProvider:
         return data
 
 
+    def get_sessions(self, options):
+        """
+        Gets the list of current user sessions.
+        """
+        # define searchable properties
+        options["search_properties"] = ["email", "user_agent", "client_ip"]
+        data = self.options.store.get_sessions(options)
+        for o in data.subset:
+            o["user_agent"] = o["client_data"]["user_agent"]
+            del o["client_data"]
+        return data
+
+
     def prepare_account_data(self, account):
         """
         Prepares account data, to share it outside of bll.
@@ -246,7 +259,8 @@ class MembershipProvider:
         # save session
         session = self.options.store.create_session(userkey, expiration, client_ip, client_data)
 
-        self.prepare_account_data(account_data)
+        del account_data.salt
+        del account_data.hash
         return True, {
             "principal": Principal(account_data.id,
                                    account_data,

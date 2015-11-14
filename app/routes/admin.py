@@ -44,7 +44,8 @@ def adminauth():
         return "Bad Request", 400, {"Content-Type": "text/plain"}
 
     client_ip = request.remote_addr
-    success, result = app.membership.try_login(email, password, remember, {
+    success, result = app.membership.try_login(email, password, remember, client_ip, {
+        "user_agent": request.headers["User-Agent"] if "User-Agent" in request.headers else None,
         "navigator": navigator
     })
 
@@ -117,4 +118,19 @@ def admingetexceptions():
     # formatting is responsibility of presentation layer
     for o in data.subset:
         o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
+    return json.dumps(data.__dict__)
+
+
+@admin.route("/admin/getsessions", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetsessions():
+    """Returns the list of current users sessions"""
+    data = request.get_json()
+    if data is None:
+        return "Missing filters data.", 400, {"Content-Type": "text/plain"}
+
+    data = app.membership.get_sessions(data)
+    # formatting is responsibility of presentation layer
+    for o in data.subset:
+        o["expiration"] = o["expiration"].strftime("%Y-%m-%d %H:%M:%S")
     return json.dumps(data.__dict__)

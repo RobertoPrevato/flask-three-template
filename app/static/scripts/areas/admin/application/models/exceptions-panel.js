@@ -17,21 +17,17 @@ R("exceptions-panel", ["model", "app-services"], function (Model, Services) {
 
     },
 
-     table: {
-        url: "/admin/getexceptions",
-        useQueryString: false,
-        orderBy: "timestamp",
-        sortOrder: "desc",
-        columns: {
-          type: I.t("voc.Type"),
-          message: I.t("voc.Message"),
-          callstack: I.t("voc.Callstack"),
-          timestamp: I.t("voc.Timestamp"),
-          data: {
-            hidden: true,
-            secret: true
-          }
-        }
+    table: {
+      url: "/admin/getexceptions",
+      useQueryString: false,
+      orderBy: "timestamp",
+      sortOrder: "desc",
+      columns: {
+        type: I.t("voc.Type"),
+        message: I.t("voc.Message"),
+        callstack: I.t("voc.Callstack"),
+        timestamp: I.t("voc.Timestamp")
       }
+    }
   });
 });

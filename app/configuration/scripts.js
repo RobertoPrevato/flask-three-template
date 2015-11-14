@@ -75,6 +75,7 @@ module.exports = {
       "/scripts/areas/admin/dashboard/routes.js",
       "/scripts/areas/admin/application/services.js",
       "/scripts/areas/admin/application/models/users-panel.js",
+      "/scripts/areas/admin/application/models/sessions-panel.js",
       "/scripts/areas/admin/application/models/messages-panel.js",
       "/scripts/areas/admin/application/models/exceptions-panel.js",
       "/scripts/areas/admin/application/routes.js",

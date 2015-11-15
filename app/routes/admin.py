@@ -91,6 +91,28 @@ def admingetusers():
     return json.dumps(data.__dict__)
 
 
+@admin.route("/admin/saveuser", methods=["POST"])
+@auth(required_roles=["admin"])
+def adminsaveuser():
+    """Returns the list of application users"""
+    data = request.get_json()
+    if data is None:
+        return "Missing data.", 400, {"Content-Type": "text/plain"}
+
+    """
+    TODO: idempotent method.
+    if data["id"]:
+        # edit account
+        success, result = app.membership.update_account(data)
+    else:
+        # create account
+        success, result = app.membership.create_account(data)
+
+    return json.dumps(data.__dict__)
+    """
+    return "Not implemented", 500, {"Content-Type": "text/plain"}
+
+
 @admin.route("/admin/getuserdetails", methods=["POST"])
 @auth(required_roles=["admin"])
 def admingetuserdetails():
@@ -102,6 +124,25 @@ def admingetuserdetails():
     if data is None:
         return json.dumps(None)
     return json.dumps(data.__dict__)
+
+
+@admin.route("/admin/getuserformdata", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetuserformdata():
+    """
+    Returns the data required to render the user form (e.g. the list of application supported roles)
+    It should also contain the object data structure.
+    """
+    data = {
+        "roles": [
+            "admin",
+            "superuser",
+            "customer",
+            "sgherro",
+            "beholder"
+        ] # application supported roles
+    }
+    return json.dumps(data)
 
 
 @admin.route("/admin/getmessages", methods=["POST"])

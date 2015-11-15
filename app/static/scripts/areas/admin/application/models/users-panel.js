@@ -1,19 +1,34 @@
 //
 //  Users admin panel.
 //
-R("users-panel", ["model", "app-services"], function (Model, Services) {
+R("users-panel", ["admin-panel", "user-services"], function (AdminPanel, Services) {
 
-  return Model.extend({
+  return AdminPanel.extend({
     id: "users-panel",
     listUrl: "#/users",
-    template: "generic-panel",
-    detailview: "user-detail",
+    formView: "user-form",
+    editItemTitle: I.t("voc.EditUser"),
+    createItemTitle: I.t("voc.CreateNewUser"),
+    services: Services,
 
     defaults: {
-      data: void(0),
+      data: {}, //stores the object data (for edit views; or create new)
       error: void(0),
       loading: false,
-      subtemplate: "tableview"
+      subtemplate: "tableview",
+      formtitle: ""
+    },
+
+    schema: {
+      email: {
+        validation: ["required", "email"]
+      },
+      "password-one": {
+        validation: ["required", "newPassword"]
+      },
+      "password-two": {
+        validation: ["required", "newPassword"]
+      }
     },
 
     table: {
@@ -29,51 +44,8 @@ R("users-panel", ["model", "app-services"], function (Model, Services) {
       }
     },
 
-    initialize: function (params) {
-      this.handleParams(params);
-    },
+    initialize: function () {
 
-    handleParams: function (params) {
-      if (!params) params = { view: "list" };
-      //function to use to handle url changes;
-      var self = this;
-      switch (params.view)
-      {
-        case "list":
-          //display the list view
-          self.subtemplate("tableview");
-          break;
-        case "details":
-          //display the detail view
-          self
-            .loading(true)
-            .subtemplate(self.detailview)
-            .loadDetails(params.id);
-          break;
-        default:
-          throw "View type `" + params.view + "` is not handled.";
-      }
-    },
-
-    loadDetails: function (id) {
-      var self = this;
-
-      Services.getUserDetails({
-        id: id
-      }).done(function (data) {
-        self
-          .data(data)
-          .loading(false);
-      }).fail(function () {
-        self.error({
-          title: I.t("errors.LoadingData"),
-          retry: function () {
-            self.loading(true).delay(function () {
-              self.loadDetails(id);
-            }, 300);
-          }
-        }).loading(false);
-      });
     }
   });
 });

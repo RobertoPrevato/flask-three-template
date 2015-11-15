@@ -45,6 +45,8 @@ module.exports = {
     ],
 
     "admin": [
+      "/scripts/areas/common/validation/email.js",
+      "/scripts/areas/common/validation/password.js",
       "/scripts/areas/admin/locale/en.js",
       "/scripts/shared/components/extend.js",
       "/scripts/shared/components/events.js",
@@ -70,11 +72,12 @@ module.exports = {
       "/scripts/libs/plugins/kingtable/lodash/templates.js",
       "/scripts/areas/admin/libs.setup.js",
       "/scripts/libs/knockout/binders/ko-kingtable.js",
+      "/scripts/areas/common/panels/models/admin-panel.js",
       "/scripts/areas/admin/templates.js",
       "/scripts/areas/admin/dashboard/services.js",
       "/scripts/areas/admin/dashboard/models/dashboard.js",
       "/scripts/areas/admin/dashboard/routes.js",
-      "/scripts/areas/admin/application/services.js",
+      "/scripts/areas/admin/application/user-services.js",
       "/scripts/areas/admin/application/models/users-panel.js",
       "/scripts/areas/admin/application/models/sessions-panel.js",
       "/scripts/areas/admin/application/models/messages-panel.js",

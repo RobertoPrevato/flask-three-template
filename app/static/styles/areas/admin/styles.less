@@ -25,8 +25,53 @@ h2 {
   }
 }
 
-.detail-view {
+.detail-view, .form-view {
   padding: 0 25px;
+
+  h2 {
+    font-size: 20px;
+    border-bottom: 1px dotted #ccc;
+    margin: 20px 0;
+    line-height: 35px;
+  }
+
+  input[type="text"], input[type="password"] {
+    font-size: 13px;
+    min-width: 180px;
+  }
+
+  select {
+    min-width: 180px;
+    font-size: 13px;
+    padding: 1px 0px;
+    option {
+      font-size: 13px;
+    }
+  }
+
+  dl {
+    dt {
+      float: left;
+      min-width: 150px;
+      font-size: 13px;
+      label {
+        font-size: 13px;
+      }
+    }
+    dd {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .buttons {
+    .btn {
+      min-width: 120px;
+      margin-right: 20px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .alert-info {

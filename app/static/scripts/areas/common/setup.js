@@ -1,5 +1,5 @@
 //common libraries setup
-R("setup", [], function () {
+R("setup", ["menu-functions"], function (MenuFunctions) {
   
   //lodash template settings
   _.extend(_.templateSettings, {
@@ -22,7 +22,8 @@ R("setup", [], function () {
   };
 
   //modify Simrou to force a default hash
-  Simrou.prototype.resolveHash = function(event) {
+  Simrou.prototype.resolveHash = function (event) {
+    MenuFunctions.closeMenus();
     var hash, url;
     if (this.observeHash) {
       if (this.eventSupported) {

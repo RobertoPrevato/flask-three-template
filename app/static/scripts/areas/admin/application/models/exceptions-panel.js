@@ -1,7 +1,7 @@
 //
 //  App exceptions admin panel.
 //
-R("exceptions-panel", ["model", "app-services"], function (Model, Services) {
+R("exceptions-panel", ["model"], function (Model) {
 
   return Model.extend({
     id: "exceptions-panel",

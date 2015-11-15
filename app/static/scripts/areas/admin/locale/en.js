@@ -9,6 +9,7 @@ _.extend(I.regional, {
       "Username": "Username",
       "Email": "Email",
       "Password": "Password",
+      "ConfirmPassword": "Confirm password",
       "RememberOnline": "Remember online",
       "View": "View",
       "Table": "Table",
@@ -44,13 +45,26 @@ _.extend(I.regional, {
       "Expiration": "Expiration",
       "UserDetails": "User details",
       "ObjectNotFound": "Object not found.",
-      "ReturnToList": "Return to the list."
+      "ReturnToList": "Return to the list.",
+      "Save": "Save",
+      "Cancel": "Cancel",
+      "CreateNewItem": "Create new item",
+      "EditItem": "Edit item",
+      "CreateNewUser": "Create new user",
+      "EditUser": "Edit user",
+      "Banned": "Banned"
     },
     "errors": {
       "emptyValue": "This field cannot be empty.",
       "email": "The value is not a valid email.",
+      "passwordTooWeak": "The password is too weak.",
+      "passwordsDontMatch": "Passwords don't match.",
+      "illegalCharsInPassword": "The password contains not allowed characters.",
       "LoginFailed": "The email - password combination is not right.",
-      "LoadingData": "An error occurred while loading contents."
+      "LoadingData": "An error occurred while loading contents.",
+      "SavingData": "An error occurred while saving contents.",
+      "TechnicalError": "Technical error",
+      "PerformingOperation": "An error occurred while performing the operation."
     },
     "dialogs": {
       "ErrorTitle": "Error",

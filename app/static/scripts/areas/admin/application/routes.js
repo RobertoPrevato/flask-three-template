@@ -1,7 +1,7 @@
 //
 //  Router configuration for users admin
 //
-R("users.admin.routes", [
+R("app.admin.routes", [
   "app",
   "routes",
   "users-panel",
@@ -17,10 +17,17 @@ R("users.admin.routes", [
         }));
       }
     },
+    "/create/user": {
+      get: function (e, params) {
+        app.go(UsersPanel, _.extend(params, {
+          view: "creation"
+        }));
+      }
+    },
     "/user/:id": {
       get: function (e, params) {
         app.go(UsersPanel, _.extend(params, {
-          view: "details"
+          view: "edit"
         }));
       }
     },

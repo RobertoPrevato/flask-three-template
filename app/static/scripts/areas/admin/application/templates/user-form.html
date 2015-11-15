@@ -1,0 +1,35 @@
+<div class="form-view">
+  <div data-bind="dataentry">
+    <h2 data-bind="text: formtitle"></h2>
+    <dl>
+      <dt><label for="email">{{ I.t("voc.Email") }}</label></dt>
+      <dd>
+        <input id="email" name="email" type="text" data-bind="value: data().email" />
+      </dd>
+      <!--ko if: data().id-->
+      <dt><label for="banned">{{ I.t("voc.Banned") }}</label></dt>
+      <dd>
+        <input id="banned" name="banned" type="checkbox" data-bind="checked: data().banned" />
+      </dd>
+      <!--/ko-->
+      <!--ko ifnot: data().id-->
+      <dt><label for="password-one">{{ I.t("voc.Password") }}</label></dt>
+      <dd>
+        <input id="password-one" name="password-one" type="password" data-bind="value: data().passwordone" />
+      </dd>
+      <dt><label for="password-two">{{ I.t("voc.ConfirmPassword") }}</label></dt>
+      <dd>
+        <input id="password-two" name="password-two" type="password" data-bind="value: data().passwordtwo" />
+      </dd>
+      <!--/ko-->
+      <dt><label for="roles">{{ I.t("voc.Roles") }}</label></dt>
+      <dd>
+        <select data-bind="options: form().roles, selectedOptions: data().roles" multiple="multiple"></select>
+      </dd>
+    </dl>
+  </div>
+  <div class="buttons">
+    <button type="button" class="btn" data-bind="click: save">{{ I.t("voc.Save") }}</button>
+    <button type="button" class="btn" data-bind="click: cancel">{{ I.t("voc.Cancel") }}</button>
+  </div>
+</div>

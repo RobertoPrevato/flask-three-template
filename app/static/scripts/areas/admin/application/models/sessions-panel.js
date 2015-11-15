@@ -1,7 +1,7 @@
 //
 //  Sessions admin panel.
 //
-R("sessions-panel", ["model", "app-services"], function (Model, Services) {
+R("sessions-panel", ["model"], function (Model) {
 
   return Model.extend({
     id: "sessions-panel",

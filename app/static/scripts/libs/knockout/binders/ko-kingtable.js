@@ -6,7 +6,7 @@
   var setter = function(element, valueAccessor, allBindingsAccessor, model) {
     var v = ko.unwrap(valueAccessor());
     v.$el = $(element);
-    var table = new $.KingTable(v, v.proto);
+    var table = new $.KingTable(v, { context: model });
     if (v.onRender) v.onRender.call(model, table);
 
     //register event handlers
@@ -31,8 +31,9 @@
     table.render();
     ko.onDispose(element, function (element) {
       //dispose the kingtable
-      var kingtable = $(element).data("kingtable");
-      if (kingtable) kingtable.dispose();
+      //var kingtable = $(element).data("kingtable");
+      delete table.context;
+      table.dispose();
     });
   };
 

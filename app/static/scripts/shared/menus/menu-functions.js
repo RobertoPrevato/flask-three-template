@@ -14,7 +14,7 @@ R("menu-functions", [], function () {
       var self = this;
       if (e && e.which === 3) return;
       $(toggle).each(function () {
-        if ($.contains(this, e.target)) return;
+        if (e && $.contains(this, e.target)) return;
         var el = $(this);
         var parent = self.getParent(el);
         if (!parent.hasClass("open")) return;

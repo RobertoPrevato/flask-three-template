@@ -1,7 +1,7 @@
 //
 //  App messages admin panel.
 //
-R("messages-panel", ["model", "app-services"], function (Model, Services) {
+R("messages-panel", ["model"], function (Model) {
 
   return Model.extend({
     id: "messages-panel",

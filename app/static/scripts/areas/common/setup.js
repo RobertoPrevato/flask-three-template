@@ -20,4 +20,22 @@ R("setup", [], function () {
     url = url.replace(this.RegExpCache.searchHash, "");
     return String(url).replace(this.RegExpCache.extractHash, '$1');
   };
+
+  //modify Simrou to force a default hash
+  Simrou.prototype.resolveHash = function(event) {
+    var hash, url;
+    if (this.observeHash) {
+      if (this.eventSupported) {
+        url = event.originalEvent.newURL;
+      }
+      hash = this.getHash(url);
+      var re = this.resolve(hash, "get");
+      if (!re) {
+        //redirect to /
+        location.hash = "#/";
+        return false;
+      }
+      return true;
+    }
+  };
 });

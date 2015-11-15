@@ -1,8 +1,7 @@
 (function () {
 
   var setter = function(element, valueAccessor, allBindingsAccessor) {
-    var v = valueAccessor();
-
+    var v = ko.unwrap(valueAccessor());
     element.setAttribute("id", v);
   };
 

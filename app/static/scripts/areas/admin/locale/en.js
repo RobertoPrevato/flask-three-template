@@ -41,7 +41,10 @@ _.extend(I.regional, {
       "ClientIp": "Client ip",
       "Anonymous": "Anonymous",
       "UserAgent": "User-Agent",
-      "Expiration": "Expiration"
+      "Expiration": "Expiration",
+      "UserDetails": "User details",
+      "ObjectNotFound": "Object not found.",
+      "ReturnToList": "Return to the list."
     },
     "errors": {
       "emptyValue": "This field cannot be empty.",

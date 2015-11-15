@@ -12,7 +12,16 @@ R("users.admin.routes", [
   _.extend(Routes, {
     "/users": {
       get: function (e, params) {
-        app.go(UsersPanel, params);
+        app.go(UsersPanel, _.extend(params, {
+          view: "list"
+        }));
+      }
+    },
+    "/user/:id": {
+      get: function (e, params) {
+        app.go(UsersPanel, _.extend(params, {
+          view: "details"
+        }));
       }
     },
     "/exceptions": {

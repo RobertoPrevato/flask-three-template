@@ -99,6 +99,22 @@ class MembershipProvider:
         return result
 
 
+    def get_account_by_id(self, account_id):
+        """
+        Gets the account details by id
+        :param id: account id
+        :return: account
+        """
+        data = self.options.store.get_account_by_id(account_id)
+        if data is None:
+            return None
+        del data["salt"]
+        del data["hash"]
+        result = Bunch()
+        result.merge(data)
+        return result
+
+
     def get_accounts(self, options):
         """
         Gets the list of all application accounts.

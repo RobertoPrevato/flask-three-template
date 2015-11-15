@@ -91,6 +91,19 @@ def admingetusers():
     return json.dumps(data.__dict__)
 
 
+@admin.route("/admin/getuserdetails", methods=["POST"])
+@auth(required_roles=["admin"])
+def admingetuserdetails():
+    data = request.form
+    if not data or "id" not in data:
+        return "Missing id.", 400, {"Content-Type": "text/plain"}
+
+    data = app.membership.get_account_by_id(data["id"])
+    if data is None:
+        return json.dumps(None)
+    return json.dumps(data.__dict__)
+
+
 @admin.route("/admin/getmessages", methods=["POST"])
 @auth(required_roles=["admin"])
 def admingetmessages():

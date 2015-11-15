@@ -8,6 +8,17 @@ R("app-services", [], function () {
         url: params.url,
         context: params.context
       }).promise();
+    },
+    getUserDetails: function (params) {
+      return $.ajax({
+        url: "/admin/getuserdetails",
+        type: "POST",
+        data: {
+          id: params.id
+        },
+        dataType: "json",
+        context: params.context
+      }).promise();
     }
   };
 });

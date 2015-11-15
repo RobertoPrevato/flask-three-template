@@ -7,6 +7,7 @@
 """
 import uuid
 from pymongo import ASCENDING
+from bson.objectid import ObjectId
 from dalmongo import db
 from dalmongo.mongostore import MongoStore
 from core.collections.bunch import Bunch
@@ -87,6 +88,20 @@ class MembershipStore(MongoStore):
         """
         collection = db[self.options.accounts_collection]
         condition = self.get_account_condition(userkey)
+        data = collection.find_one(condition)
+        return self.normalize_id(data)
+
+
+    def get_account_by_id(self, account_id):
+        """
+        Gets the account data associated with the user with the given id.
+        :param id: user id
+        :return:
+        """
+        collection = db[self.options.accounts_collection]
+        condition = {
+            "_id": ObjectId(account_id)
+        }
         data = collection.find_one(condition)
         return self.normalize_id(data)
 

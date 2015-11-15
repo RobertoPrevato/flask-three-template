@@ -10,6 +10,7 @@ if (!ko.templates) ko.templates = {};
     'view': '<!--ko if: dialog()--> <div data-bind="template: { name: dialog().type || \'generic-dialog\', data: dialog }"></div> <!--/ko--> <!--ko if: template() && panel()--> <div data-bind="template: { name: template(), data: panel }"></div> <!--/ko-->',
     'error-panel': '﻿ <div class="main-error"> <div class="alert" data-bind="css: \'alert-\' + (status || \'danger\')"> <h2 data-bind="text: title"></h2> <!--ko if: $data.message--> <p data-bind="text: message"></p> <!--/ko--> <!--ko if: $data.retry--> <button class="btn" data-bind="click: retry">{{I.t("voc.TryAgain")}}</button> <!--/ko--> </div> </div>',
     'preloader': '﻿ <div class="preloader-mask"> <div class="preloader-icon"></div> </div>',
+    'empty-view': '<div class="alert alert-info"> <strong>{{ I.t("voc.ObjectNotFound") }}</strong><br /> <!--ko if: $data.listUrl--> <a data-bind="href: $data.listUrl">{{ I.t("voc.ReturnToList") }}</a> <!--/ko--> </div>',
     'generic-panel': '<!--ko if: loading()--> <div data-bind="template: \'preloader\'"></div> <!--/ko--> <!--ko ifnot: loading()--> <!--ko if: error()--> <div data-bind="template: { name: \'error-panel\', data: error }"></div> <!--/ko--> <!--ko ifnot: error()--> <div data-bind="template: subtemplate"></div> <!--/ko--> <!--/ko-->',
     'crudpanel': '<div></div>',
     'tableview': '<div data-bind="id: id, kingtable: table"></div>'

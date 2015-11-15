@@ -23,7 +23,11 @@ R("app", [], function () {
         cp.handleParams(params);
         return this;
       }
-      return this.setPanel(new model(params));
+      var instance = new model();
+      this.setPanel(instance);
+      if (instance.handleParams)
+        instance.handleParams(params);
+      return this;
     },
 
     /**

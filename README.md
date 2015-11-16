@@ -14,7 +14,7 @@ Project template for Python Flask three-tier, Single Page Applications using the
 * Skeleton for unit testing.
 * Custom error pages.
 * Application db logger, to store and retrieve messages and exceptions logs in database
-* CRUD architecture, for SPA administrative sides (see [example below](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular#crud-architecture))
+* CRUD architecture, for SPA administrative sides (see [more details below](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular#crud-architecture))
 
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.
@@ -41,6 +41,8 @@ Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three
 
 ## CRUD architecture
 The branch spa-humbular includes a strategy to implement SPA administrative sides with CRUD functionalities.
-To create a working example, the user management feature has been used.
+As a working example, the user management feature has been used.
 
 ![crud-architecture](http://ugrose.com/content/demos/humbular/images/crud-architecture.gif)
+
+For detailed information, refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/CRUD-architecture-for-SPA).

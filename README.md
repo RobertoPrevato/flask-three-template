@@ -36,3 +36,11 @@ Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three
 ## Grunt integration
 * JavaScript bundling and minification strategy.
 * LESS compilation.
+
+## CRUD architecture
+The branch spa-humbular includes a strategy to implement SPA administrative sides with CRUD functionalities.
+As a working example, the user management feature has been used.
+
+![crud-architecture](http://ugrose.com/content/demos/humbular/images/crud-architecture.gif)
+
+For detailed information, refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/CRUD-architecture-for-SPA).

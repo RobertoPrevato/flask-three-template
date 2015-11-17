@@ -1,5 +1,6 @@
 # Flask-Humbular project template
 Project template for Python Flask three-tier, Single Page Applications using the [Humbular project template](https://github.com/RobertoPrevato/Humbular).
+<img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features
 * Single Page Application code structure.

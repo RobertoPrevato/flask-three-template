@@ -1,5 +1,6 @@
 # Flask-three-template
 Project template for Python Flask three-tier web applications.
+<img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features
 * Project skeleton ready to use, to start a three tier web application using Flask for its presentation layer.

@@ -19,6 +19,7 @@ Project template for Python Flask three-tier web applications, using Aurelia web
 ## Getting started
 In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
 Refer to the official [Aurelia getting started guide](http://aurelia.io/get-started.html).
+> Note: since the jspm packages need to be accessible to the client, the npm install command must be executed directly from the app/static folder, where the package.json file resides 
 
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.

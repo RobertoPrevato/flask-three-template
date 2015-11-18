@@ -24,7 +24,7 @@ Refer to the official [Aurelia getting started guide](http://aurelia.io/get-star
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.
 * [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy.
 * [spa-humbular](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular): template with Humbular Single Page Application strategy.
-* [spa-aurelia](https://github.com/RobertoPrevato/flask-three-template/tree/spa-aurelia): template with Aurelia framework.
+* [spa-aurelia](https://github.com/RobertoPrevato/flask-three-template/tree/spa-aurelia): Single Page Application template using Aurelia framework.
 
 ## How to prepare the environment
 * Python.

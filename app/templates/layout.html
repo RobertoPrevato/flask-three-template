@@ -34,6 +34,11 @@
   <div id="content">
     {%- block body -%}{%- endblock -%}
   </div>
+  <script src="scripts/system.js"></script>
+  <script src="scripts/config.js"></script>
   {%- block js -%}{%- endblock -%}
+  <script>
+    System.import("aurelia-bootstrapper");
+  </script>
 </body>
 </html>

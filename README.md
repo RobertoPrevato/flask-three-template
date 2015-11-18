@@ -1,8 +1,9 @@
 # Flask-three-template
-Project template for Python Flask three-tier web applications.
+Project template for Python Flask three-tier web applications, using Aurelia web framework.
 <img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features
+* Integration with [Aurelia](http://aurelia.io/) web framework.
 * Project skeleton ready to use, to start a three tier web application using Flask for its presentation layer.
 * Localization strategy, using Flask-Babel.
 * Authentication and authorization strategies, including anonymous authentication.
@@ -15,10 +16,15 @@ Project template for Python Flask three-tier web applications.
 * Custom error pages.
 * Application db logger, to store and retrieve messages and exceptions logs in database
 
+## Getting started
+In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
+Refer to the official [Aurelia getting started guide](http://aurelia.io/get-started.html).
+
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.
 * [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy.
 * [spa-humbular](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular): template with Humbular Single Page Application strategy.
+* [spa-aurelia](https://github.com/RobertoPrevato/flask-three-template/tree/spa-aurelia): template with Aurelia framework.
 
 ## How to prepare the environment
 * Python.

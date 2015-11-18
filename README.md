@@ -1,5 +1,5 @@
 # Flask-three-template
-Project template for Python Flask three-tier web applications, using Aurelia web framework.
+Project template for Python Flask three-tier web applications, using [Aurelia web framework](http://aurelia.io/).
 <img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features
@@ -16,11 +16,6 @@ Project template for Python Flask three-tier web applications, using Aurelia web
 * Custom error pages.
 * Application db logger, to store and retrieve messages and exceptions logs in database
 
-## Getting started
-In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
-Refer to the official [Aurelia getting started guide](http://aurelia.io/get-started.html).
-> Note: since the jspm packages need to be accessible to the client, the npm install command must be executed directly from the app/static folder, where the package.json file resides 
-
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.
 * [master](https://github.com/RobertoPrevato/flask-three-template/tree/master): template with custom authentication and authorization strategy.
@@ -35,6 +30,11 @@ Refer to the official [Aurelia getting started guide](http://aurelia.io/get-star
 * pycrypto.
 
 Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Preparing-the-environment), for instructions about how to prepare the environment and install the dependencies.
+
+In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
+Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Using-Aurelia)
+and to the official [Aurelia getting started guide](http://aurelia.io/get-started.html) for more information.
+> Note: since the jspm packages need to be accessible to the client, the npm install command must be executed directly from the app/static folder, where the package.json file resides
 
 ## Servers setup
 * Basic settings file for Nginx.

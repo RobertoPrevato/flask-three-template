@@ -1,27 +1,13 @@
 {
-  "name": "aurelia-skeleton-navigation",
-  "version": "1.0.0-beta.1.0.1",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
-  "keywords": [
-    "aurelia",
-    "navigation",
-    "skeleton"
-  ],
-  "homepage": "http://aurelia.io",
-  "bugs": {
-    "url": "https://github.com/aurelia/skeleton-navigation/issues"
-  },
-  "license": "CC0-1.0",
-  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "name": "Flask-three-template-Aurelia",
+  "description": "A starter kit for three tier Python Flask application using Aurelia.",
   "main": "dist/main.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/aurelia/skeleton-navigation"
+    "url": "https://github.com/RobertoPrevato/flask-three-template/tree/spa-aurelia"
   },
-  "scripts": {
-    "test": "gulp test",
-    "e2e": "gulp serve e2e"
-  },
+  "license": "CC0-1.0",
+  "author": "Roberto Prevato <roberto.prevato@gmail.com> (http://ugrose.com)",
   "devDependencies": {
     "aurelia-bundler": "^0.1.8",
     "aurelia-tools": "^0.1.3",

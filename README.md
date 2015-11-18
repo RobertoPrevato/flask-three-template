@@ -23,13 +23,7 @@ Project template for Python Flask three-tier web applications, using [Aurelia we
 * [spa-aurelia](https://github.com/RobertoPrevato/flask-three-template/tree/spa-aurelia): Single Page Application template using Aurelia framework.
 
 ## How to prepare the environment
-* Python.
-* [Flask](http://flask.pocoo.org/).
-* [Flask-Babel](https://pythonhosted.org/Flask-Babel/).
-* pymongo.
-* pycrypto.
-
-Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Preparing-the-environment), for instructions about how to prepare the environment and install the dependencies.
+Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Preparing-the-environment), for instructions about how to prepare the server side environment.
 
 In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
 Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Using-Aurelia)

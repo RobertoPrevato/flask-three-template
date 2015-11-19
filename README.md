@@ -1,7 +1,5 @@
 # Flask-three-template
 Project template for Python Flask three-tier web applications, using [Aurelia web framework](http://aurelia.io/).
-<img src="http://ugrose.com/content/demos/flask/Flask-Aurelia.png" title="Flask-Aurelia" />
-
 <img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features
@@ -17,6 +15,8 @@ Project template for Python Flask three-tier web applications, using [Aurelia we
 * Skeleton for unit testing.
 * Custom error pages.
 * Application db logger, to store and retrieve messages and exceptions logs in database
+
+<img src="http://ugrose.com/content/demos/flask/Flask-Aurelia.png" title="Flask-Aurelia" />
 
 ## Branches
 * [empty-project](https://github.com/RobertoPrevato/flask-three-template/tree/empty-project): empty template without any authentication strategy.

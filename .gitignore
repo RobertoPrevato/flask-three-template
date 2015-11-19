@@ -68,3 +68,6 @@ target/
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 jspm_packages
+
+# adds the static/scripts folder to ignore list; since the code is built by Gulp
+app/static/scripts

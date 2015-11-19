@@ -27,7 +27,7 @@ Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three
 
 In order to use the Flask-Aurelia template, it`s necessary to install the software required by Aurelia (e.g. NodeJs, gulp; jspm).
 Refer to the [dedicated wiki page](https://github.com/RobertoPrevato/flask-three-template/wiki/Using-Aurelia)
-and to the official [Aurelia getting started guide](http://aurelia.io/get-started.html) for more information.
+and to the official [Aurelia getting started guide](http://aurelia.io/docs.html#/aurelia/framework/latest/doc/article/getting-started) for more information.
 > Note: since the jspm packages need to be accessible to the client, the npm install command must be executed directly from the app/static folder, where the package.json file resides
 
 ## Servers setup

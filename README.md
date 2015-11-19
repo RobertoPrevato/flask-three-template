@@ -1,5 +1,7 @@
 # Flask-three-template
 Project template for Python Flask three-tier web applications, using [Aurelia web framework](http://aurelia.io/).
+<img src="http://ugrose.com/content/demos/flask/Flask-Aurelia.png" title="Flask-Aurelia" />
+
 <img src="http://ugrose.com/ug.png" width="300" height="300" alt="UgRoslein" title="UgRoslein - ugrose.com" align="right" />
 
 ## Features

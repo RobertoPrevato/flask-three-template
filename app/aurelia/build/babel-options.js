@@ -1,5 +1,5 @@
 module.exports = {
-  modules: 'system',
+  modules: "system",
   moduleIds: false,
   comments: false,
   compact: false,

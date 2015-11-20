@@ -3,8 +3,8 @@
 
 export class Welcome {
   heading = "See how Aurelia two-way binding works";
-  firstName = "John";
-  lastName = "Doe";
+  firstName = "Hello";
+  lastName = "World!";
   previousValue = this.fullName;
 
   //Getters can"t be directly observed, so they must be dirty checked.

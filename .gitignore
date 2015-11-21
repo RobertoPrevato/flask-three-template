@@ -67,3 +67,8 @@ target/
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+jspm_packages
+
+# Avoid accidentally commit script files to master
+# the master branch is meant to be abstracted from client side code
+app/static

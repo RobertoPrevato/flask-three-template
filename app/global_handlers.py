@@ -2,6 +2,7 @@ from flask import url_for, request
 from app.handlers.errors_handlers import errors_handlers
 from app.handlers.locale_handlers import locale_handlers
 from app.handlers.authentication_handlers import authentication_handlers
+from app.decorators.security.antiforgery import issue_aft_token
 
 def global_handlers(app):
     """
@@ -35,10 +36,12 @@ def global_handlers(app):
         copy = app.config["COPYRIGHT"]
         def get_copy():
             return copy
+
         helpers = {
             "static": lambda filename: url_for("static", filename=filename),
             "resources": resources,
-            "copy": get_copy
+            "copy": get_copy,
+            "antiforgery": issue_aft_token
         }
         return helpers
 

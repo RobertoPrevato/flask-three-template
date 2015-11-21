@@ -82,6 +82,8 @@ def authentication_handlers(app):
     def set_auth_cookie(response):
         set_session_cookie = hasattr(request, "set_session_cookie")
         unset_session_cookie = hasattr(request, "unset_session_cookie")
+        set_aft_cookie = hasattr(request, "set_aft_cookie")
+
         if set_session_cookie:
             session = request.session
             session_guid = str(session.guid)
@@ -96,5 +98,18 @@ def authentication_handlers(app):
         if unset_session_cookie:
             # instruct the browser to delete the session cookie
             response.set_cookie(session_cookie, value="", expires=0)
+
+        if set_aft_cookie:
+            session = request.session
+            aft = request.set_aft_cookie
+            # set the cookie in the response
+            response.set_cookie("aftck",
+                                value=aft,
+                                expires=session.expiration,
+                                httponly=True,
+                                secure=SECURE_COOKIES)
+            # force XSS protection, otherwise it would be pointless to issue an antiforgery token
+            response.headers["X-Frame-Options"] = "SAMEORIGIN"
+
         return response
 

@@ -10,6 +10,25 @@
 {%- endblock -%}
 {%- block body -%}
   {# insert here html specific for this page #}
+  <div>
+    {#
+     This example shows how to use the antiforgery token, using a regular form.
+     When performing AJAX requests; set instead a request header like this:
+     "X-AFT" = document.getElementById("meta-aft").content;
+    #}
+    <h1>Welcome</h1>
+    <form action="/test" method="post">
+      <fieldset>
+        <label for="firstname">Firstname:</label>
+        <input id="firstname" type="text" name="firtsname" /><br/>
+        <label for="lastname">Lastname:</label>
+        <input id="lastname" type="text" name="lastname" />
+        <input name="aft" type="hidden" value="{{ antiforgery() }}" />
+        <hr />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+  </div>
 {%- endblock -%}
 {%- block js -%}
   {# insert here <script> elements specific for this page #}

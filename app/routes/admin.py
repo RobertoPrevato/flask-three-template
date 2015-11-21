@@ -1,6 +1,7 @@
 from flask import Blueprint, request, render_template
 from flask.ext.babel import gettext
 from app.decorators.security.auth import auth
+from app.decorators.security.antiforgery import validate_aft
 from app import app
 import json
 """
@@ -29,6 +30,7 @@ def adminlogout():
 
 
 @admin.route("/admin/auth", methods=["POST"])
+@validate_aft()
 def adminauth():
     """Responds to administrative side login post requests"""
     data = request.get_json()

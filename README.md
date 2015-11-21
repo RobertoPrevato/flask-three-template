@@ -4,9 +4,11 @@ Project template for Python Flask three-tier, Single Page Applications using the
 
 ## Features
 * Single Page Application code structure.
+* Administrative side skeleton, with login, [sessions and users administration base](https://github.com/RobertoPrevato/flask-three-template/tree/spa-humbular#crud-architecture)
 * Project skeleton ready to use, to start a three tier web application using Flask for its presentation layer.
 * Localization strategy, using Flask-Babel.
 * Authentication and authorization strategies, including anonymous authentication.
+* Antiforgery token validation strategy (session based, dual token technique; for AJAX requests and regular form posts)
 * Login mechanism protected against brute forcing (stores login attempts in DB).
 * DB based sessions strategy.
 * MongoDB collections for accounts, sessions, login attempts.

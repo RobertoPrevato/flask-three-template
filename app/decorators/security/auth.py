@@ -34,7 +34,6 @@ def auth(required_roles=None, sufficient_roles=None, redirect_url=None):
 
         if redirect_url is not None:
             return redirect(redirect_url)
-
         return render_template("error/401.html"), 401
 
 

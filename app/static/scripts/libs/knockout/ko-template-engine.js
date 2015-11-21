@@ -47,10 +47,8 @@
         s.setAttribute('type', 'text/html');
         s.setAttribute('id', template);
         //compile for translations
-        var t = getTemplate(ko.templates[template], {
-          //make the client side templates localization compatible with the server side Jinja2 templates
-          _: I.t.bind(I)
-        }, template);
+        console.log(I);
+        var t = getTemplate(ko.templates[template], {}, template);
         s.text = t;
         //set reference to s
         elem = s;

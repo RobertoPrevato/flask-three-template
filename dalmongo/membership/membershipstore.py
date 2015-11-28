@@ -127,7 +127,7 @@ class MembershipStore(MongoStore):
         data = {
           "guid": str(uuid.uuid1()),
           self.options.user_key_field: userkey,
-          "anonymous": userkey == False,
+          "anonymous": userkey is None or userkey == False,
           "expiration": expiration,
           "client_ip": client_ip,
           "client_data": client_data

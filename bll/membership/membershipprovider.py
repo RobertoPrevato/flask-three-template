@@ -352,8 +352,8 @@ class MembershipProvider:
         :param navigator:
         :return:
         """
-        expiration = self.get_new_expiration()
-        userkey = False
+        expiration = self.get_new_expiration(True)
+        userkey = None
         # save session
         session = self.options.store.create_session(userkey, expiration, client_ip, client_data)
         return {

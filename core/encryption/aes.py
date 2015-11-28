@@ -6,7 +6,6 @@ import base64
 from Crypto import Random
 from Crypto.Cipher import AES
 
-
 BS = 16
 pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS)
 unpad = lambda s : s[:-ord(s[len(s)-1:])]
@@ -29,7 +28,6 @@ class AesEncryptor:
     def encrypt(text, encryption_key):
         text = pad(text)
         encryption_key = AesEncryptor.normalize_key(encryption_key)
-        #SHA256.new(encryption_key).digest()
         iv = Random.new().read(BS)
         aes = AES.new(encryption_key, AES.MODE_CBC, iv)
         return base64.b64encode(iv + aes.encrypt(text))

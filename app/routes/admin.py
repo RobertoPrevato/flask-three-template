@@ -2,6 +2,7 @@ from flask import Blueprint, request, render_template
 from flask.ext.babel import gettext
 from app.decorators.security.auth import auth
 from app.decorators.security.antiforgery import validate_aft
+from core.serialization.jsonconvert import Json, datetime_handler
 from app import app
 import json
 """
@@ -90,9 +91,7 @@ def admingetusers():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     data = app.membership.get_accounts(data)
-    for o in data.subset:
-        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
-    return json.dumps(data.__dict__)
+    return Json.serialize(data, datetime_handler)
 
 
 @admin.route("/admin/saveuser", methods=["POST"])
@@ -125,10 +124,7 @@ def admingetuserdetails():
         return "Missing id.", 400, {"Content-Type": "text/plain"}
 
     data = app.membership.get_account_by_id(data["id"])
-    if data is None:
-        return json.dumps(None)
-    data.timestamp = data.timestamp.strftime("%Y-%m-%d %H:%M:%S")
-    return json.dumps(data.__dict__)
+    return Json.serialize(data)
 
 
 @admin.route("/admin/getuserformdata", methods=["POST"])
@@ -159,10 +155,7 @@ def admingetmessages():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     data = app.reports.get_messages(data)
-    # formatting is responsibility of presentation layer
-    for o in data.subset:
-        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
-    return json.dumps(data.__dict__)
+    return Json.serialize(data, datetime_handler)
 
 
 @admin.route("/admin/getexceptions", methods=["POST"])
@@ -174,10 +167,7 @@ def admingetexceptions():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     data = app.reports.get_exceptions(data)
-    # formatting is responsibility of presentation layer
-    for o in data.subset:
-        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
-    return json.dumps(data.__dict__)
+    return Json.serialize(data, datetime_handler)
 
 
 @admin.route("/admin/getsessions", methods=["POST"])
@@ -189,8 +179,4 @@ def admingetsessions():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     data = app.membership.get_sessions(data)
-    # formatting is responsibility of presentation layer
-    for o in data.subset:
-        o["expiration"] = o["expiration"].strftime("%Y-%m-%d %H:%M:%S")
-        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
-    return json.dumps(data.__dict__)
+    return Json.serialize(data, datetime_handler)

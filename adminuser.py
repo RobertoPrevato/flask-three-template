@@ -38,7 +38,7 @@ if DAL_PROJECT == "dalmongo":
     from dalmongo.membership.membershipstore import MembershipStore
     membership_store = MembershipStore()
 else:
-    raise Exception("MembershipStore for `{}` implemented".format(DAL_PROJECT))
+    raise Exception("MembershipStore for `{}` not implemented".format(DAL_PROJECT))
 
 # instantiate the membership provider
 membership = MembershipProvider({ "store": membership_store })

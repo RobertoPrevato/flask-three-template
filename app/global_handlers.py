@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import url_for, request
 from app.handlers.errors_handlers import errors_handlers
 from app.handlers.locale_handlers import locale_handlers
@@ -55,5 +56,7 @@ def global_handlers(app):
         """
         Add headers.
         """
+        now = datetime.now()
         response.headers["Cache-Control"] = "public, max-age=0"
+        response.headers["X-Timestamp"] = now.strftime("%Y-%m-%d %H:%M:%S")
         return response

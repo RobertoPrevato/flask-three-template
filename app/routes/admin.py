@@ -127,6 +127,7 @@ def admingetuserdetails():
     data = app.membership.get_account_by_id(data["id"])
     if data is None:
         return json.dumps(None)
+    data.timestamp = data.timestamp.strftime("%Y-%m-%d %H:%M:%S")
     return json.dumps(data.__dict__)
 
 

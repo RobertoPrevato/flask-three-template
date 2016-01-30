@@ -21,8 +21,8 @@ parser.add_argument("-p", "--password", dest= "password",
                     required=False, help="User password")
 
 parser.add_argument("-o", "--operation", dest="operation",
-                    required=True, choices=["add", "delete", "setroles"],
-                    help="Operation to perform: add user, delete user, set roles")
+                    required=True, choices=["add", "delete", "setroles", "setpassword"],
+                    help="Operation to perform: add user, delete user, set roles, set password")
 
 parser.add_argument("-r", "--roles", nargs='+', dest= "roles",
                     required=False, help="User roles")
@@ -76,6 +76,16 @@ def main(options):
         })
         if success:
             print("Account updated successfully")
+
+    elif options.operation == "setpassword":
+        # password is required
+        if not options.password:
+            print("error: argument -p/--password is required")
+            return
+
+        success, result = membership.update_password(options.userkey, options.password)
+        if success:
+            print("Account password updated successfully")
 
     if not success:
         print("ERROR: " + result)

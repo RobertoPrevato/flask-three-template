@@ -183,6 +183,23 @@ class MembershipProvider:
         return True, self.options.store.create_account(userkey, hashedpassword, salt, data, roles)
 
 
+    def update_password(self, userkey, password):
+        """
+        Updates the password for the account with the given key.
+        :param userkey: key of the user (e.g. email or username)
+        :param password: account clear password (e.g. user defined password)
+        :return:
+        """
+        account_data = self.options.store.get_account(userkey)
+        if account_data is None:
+            return False, "Account not found"
+        salt = account_data["salt"]
+        hashedpassword = self.get_hash(password, salt)
+        now = datetime.datetime.now()
+        self.options.store.update_account(userkey, { "hash": hashedpassword })
+        return True, ""
+
+
     def delete_account(self, userkey):
         """
         Deletes the account with the given userkey

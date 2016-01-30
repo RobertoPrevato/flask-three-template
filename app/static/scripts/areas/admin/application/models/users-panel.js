@@ -40,7 +40,8 @@ R("users-panel", ["admin-panel", "user-services"], function (AdminPanel, Service
         data: {
           hidden: true,
           secret: true
-        }
+        },
+        timestamp: I.t("voc.Timestamp")
       }
     },
 

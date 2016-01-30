@@ -22,7 +22,8 @@ R("sessions-panel", ["model"], function (Model) {
         client_ip: I.t("voc.ClientIp"),
         anonymous: I.t("voc.Anonymous"),
         expiration: I.t("voc.Expiration"),
-        user_agent: I.t("voc.UserAgent")
+        user_agent: I.t("voc.UserAgent"),
+        timestamp: I.t("voc.Timestamp")
       }
     },
 

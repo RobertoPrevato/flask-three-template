@@ -11,6 +11,8 @@ from bson.objectid import ObjectId
 from dalmongo import db
 from dalmongo.mongostore import MongoStore
 from core.collections.bunch import Bunch
+from datetime import datetime
+
 
 class MembershipStore(MongoStore):
     """
@@ -19,11 +21,11 @@ class MembershipStore(MongoStore):
     Contains data access logic for accounts and sessions.
     """
 
-    defaults =  {
-      "accounts_collection": "accounts",
-      "sessions_collection": "sessions",
-      "login_attempts_collection": "login_attempts",
-      "user_key_field": "email"
+    defaults = {
+        "accounts_collection": "accounts",
+        "sessions_collection": "sessions",
+        "login_attempts_collection": "login_attempts",
+        "user_key_field": "email"
     }
 
 
@@ -153,7 +155,8 @@ class MembershipStore(MongoStore):
           "anonymous": userkey is None or userkey == False,
           "expiration": expiration,
           "client_ip": client_ip,
-          "client_data": client_data
+          "client_data": client_data,
+          "timestamp": datetime.now()
         }
 
         result = collection.insert_one(data)
@@ -176,7 +179,8 @@ class MembershipStore(MongoStore):
             "hash": hashedpassword,
             "salt": salt,
             "data": data,
-            "roles": roles
+            "roles": roles,
+            "timestamp": datetime.now()
         }
         result = collection.insert_one(account_data)
         return {
@@ -231,7 +235,7 @@ class MembershipStore(MongoStore):
         """
         condition = {
             self.options.user_key_field: userkey,
-            "created": { "$gte": start, "$lt": end }
+            "timestamp": { "$gte": start, "$lt": end }
         }
         collection = db[self.options.login_attempts_collection]
         attempts = collection.find(condition)
@@ -249,7 +253,7 @@ class MembershipStore(MongoStore):
         data = {
             self.options.user_key_field: userkey,
             "client_ip": client_ip,
-            "created": time
+            "timestamp": time
         }
         collection = db[self.options.login_attempts_collection]
         collection.insert_one(data)

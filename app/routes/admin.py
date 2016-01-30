@@ -90,6 +90,8 @@ def admingetusers():
         return "Missing filters data.", 400, {"Content-Type": "text/plain"}
 
     data = app.membership.get_accounts(data)
+    for o in data.subset:
+        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
     return json.dumps(data.__dict__)
 
 
@@ -189,4 +191,5 @@ def admingetsessions():
     # formatting is responsibility of presentation layer
     for o in data.subset:
         o["expiration"] = o["expiration"].strftime("%Y-%m-%d %H:%M:%S")
+        o["timestamp"] = o["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
     return json.dumps(data.__dict__)

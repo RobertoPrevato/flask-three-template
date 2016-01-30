@@ -31,9 +31,10 @@ class Json:
         if hasattr(data, "to_json"):
             return data.to_json()
 
+        if handler is None:
+            handler = isodate_handler
+
         if hasattr(data, "__dict__"):
             return Json.serialize(data.__dict__, handler)
 
-        if handler is None:
-            handler = isodate_handler
         return json.dumps(data, default=handler)
